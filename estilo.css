@@ -1,11 +1,11 @@
 /* =========================================
    CONFIGURACIÓN GENERAL
-   ========================================= */
+========================================= */
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
@@ -13,82 +13,919 @@ html {
 }
 
 body {
-    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
-    background: #eaf6ff;
-    color: #12324a;
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eaf7ff,
+            #d7efff,
+            #f7fcff
+        );
+
+    color: #164e63;
+
     min-height: 100vh;
 }
 
 
 /* =========================================
    PANTALLAS
-   ========================================= */
+========================================= */
 
 .pantalla {
+    display: none;
+
     min-height: 100vh;
+
     width: 100%;
-    padding: 30px 20px;
 
-    display: flex;
-    justify-content: center;
+    padding: 30px 18px;
+
     align-items: center;
-
-    background:
-        radial-gradient(circle at top left, #ffffff 0%, transparent 30%),
-        radial-gradient(circle at bottom right, #ccecff 0%, transparent 35%),
-        linear-gradient(135deg, #eaf6ff, #d8efff);
+    justify-content: center;
 }
 
-.oculto {
-    display: none !important;
+.pantalla.activa {
+    display: flex;
+}
+
+
+/* =========================================
+   SEPARADORES
+========================================= */
+
+.separador {
+    color: #1683c4;
+
+    font-size: 18px;
+
+    margin: 20px 0;
+
+    letter-spacing: 2px;
+
+    text-align: center;
 }
 
 
 /* =========================================
    PORTADA
-   FOTO MÁS VISIBLE Y BONITA
-   ========================================= */
+========================================= */
 
-.portada {
+#inicio {
+    background:
+        linear-gradient(
+            rgba(4, 65, 105, 0.25),
+            rgba(4, 65, 105, 0.25)
+        );
+
     position: relative;
-
-    background-image: url("portada.jpg");
-
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
 
     overflow: hidden;
 }
 
-/* Capa azul suave sobre la foto */
-.portada::before {
+#inicio::before {
     content: "";
 
     position: absolute;
+
     inset: 0;
 
-    background: rgba(4, 65, 105, 0.25);
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(255,255,255,0.5),
+            transparent 40%
+        );
 
-    z-index: 0;
+    pointer-events: none;
 }
 
-/* Contenido encima de la foto */
-.portada .contenido-portada {
+.contenido-inicio {
     position: relative;
-    z-index: 1;
+
+    width: 100%;
+    max-width: 650px;
+
+    background:
+        rgba(255, 255, 255, 0.95);
+
+    border-radius: 30px;
+
+    padding: 28px 22px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 71, 120, 0.25);
+
+    border:
+        2px solid
+        rgba(14, 116, 180, 0.15);
+}
+
+.decoracion-superior,
+.decoracion-inferior {
+    font-size: 24px;
+
+    letter-spacing: 5px;
+
+    margin: 8px 0;
+}
+
+.logo-hotwheels {
+    font-size: 18px;
+
+    font-weight: bold;
+
+    color: #075985;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
 }
 
 
 /* =========================================
-   CONTENIDO DE PORTADA
-   ========================================= */
+   FOTO
+========================================= */
 
-.contenido-portada {
-    width: min(650px, 94%);
+.foto-contenedor {
+    width: 100%;
 
-    padding: 45px 35px;
+    max-width: 500px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    border: 5px solid #ffffff;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 65, 105, 0.25);
+}
+
+.foto-portada {
+    display: block;
+
+    width: 100%;
+
+    height: 330px;
+
+    object-fit: cover;
+}
+
+
+.fecha {
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    background:
+        #e0f2fe;
+
+    color: #0369a1;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+h1 {
+    color: #075985;
+
+    font-size: 34px;
+
+    margin-bottom: 12px;
+}
+
+.subtitulo {
+    color: #52748a;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+
+    font-size: 16px;
+}
+
+
+/* =========================================
+   BOTONES
+========================================= */
+
+button {
+    font-family: inherit;
+
+    cursor: pointer;
+
+    border: none;
+}
+
+.btn-principal {
+    background:
+        linear-gradient(
+            135deg,
+            #0284c7,
+            #0369a1
+        );
+
+    color: white;
+
+    padding: 15px 35px;
+
+    border-radius: 30px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 8px 20px
+        rgba(3, 105, 161, 0.25);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+.btn-principal:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(3, 105, 161, 0.35);
+}
+
+.btn-volver {
+    background: #e0f2fe;
+
+    color: #075985;
+
+    padding: 12px 22px;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    margin-top: 25px;
+
+    transition: 0.2s;
+}
+
+.btn-volver:hover {
+    background: #bae6fd;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   CONTRASEÑA
+========================================= */
+
+.semaforo {
+    width: 100%;
+
+    max-width: 450px;
+
+    background: rgba(255,255,255,0.96);
+
+    padding: 30px 25px;
+
+    border-radius: 30px;
 
     text-align: center;
 
-    background: rgba(255, 255,
+    box-shadow:
+        0 15px 40px
+        rgba(0, 70, 110, 0.18);
+}
+
+.semaforo h2 {
+    color: #075985;
+
+    font-size: 28px;
+
+    margin: 10px 0;
+}
+
+.texto-clave {
+    color: #64748b;
+
+    margin-bottom: 20px;
+}
+
+#display {
+    background: #f0f9ff;
+
+    border:
+        2px solid
+        #bae6fd;
+
+    border-radius: 15px;
+
+    padding: 18px;
+
+    font-size: 28px;
+
+    letter-spacing: 10px;
+
+    color: #0369a1;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   TECLADO
+========================================= */
+
+.teclado {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    max-width: 300px;
+
+    margin: auto;
+}
+
+.teclado button {
+    height: 60px;
+
+    border-radius: 18px;
+
+    background: #f0f9ff;
+
+    color: #075985;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    border:
+        2px solid
+        #bae6fd;
+
+    transition: 0.2s;
+}
+
+.teclado button:hover {
+    background: #e0f2fe;
+
+    transform: scale(1.04);
+}
+
+.teclado .entrar {
+    background:
+        linear-gradient(
+            135deg,
+            #0284c7,
+            #0369a1
+        );
+
+    color: white;
+}
+
+.teclado .borrar {
+    background: #f8fafc;
+
+    color: #64748b;
+}
+
+
+/* =========================================
+   MENÚ
+========================================= */
+
+.menu-contenido {
+    width: 100%;
+
+    max-width: 650px;
+
+    background: rgba(255,255,255,0.96);
+
+    border-radius: 30px;
+
+    padding: 30px 22px;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 70, 110, 0.18);
+}
+
+.decoracion-titulo {
+    font-size: 25px;
+
+    letter-spacing: 5px;
+}
+
+.menu-contenido h2 {
+    color: #075985;
+
+    font-size: 28px;
+
+    margin-bottom: 10px;
+}
+
+.texto-menu {
+    color: #64748b;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+.menu-opciones {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.opcion-menu {
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    padding: 18px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0f9ff,
+            #ffffff
+        );
+
+    border:
+        2px solid
+        #dbeafe;
+
+    text-align: left;
+
+    transition: 0.25s;
+}
+
+.opcion-menu:hover {
+    transform: translateX(5px);
+
+    border-color: #7dd3fc;
+
+    box-shadow:
+        0 8px 20px
+        rgba(3, 105, 161, 0.12);
+}
+
+.icono-menu {
+    font-size: 30px;
+
+    margin-right: 15px;
+
+    width: 45px;
+
+    text-align: center;
+}
+
+.contenido-opcion {
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.contenido-opcion strong {
+    color: #075985;
+
+    font-size: 17px;
+}
+
+.contenido-opcion span {
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+.flecha {
+    color: #0284c7;
+
+    font-size: 24px;
+}
+
+.frase-menu {
+    color: #64748b;
+
+    font-size: 14px;
+
+    margin-top: 25px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   CARTA
+========================================= */
+
+.carta-contenido {
+    width: 100%;
+
+    max-width: 650px;
+
+    text-align: center;
+}
+
+.sobre-decoracion {
+    font-size: 50px;
+
+    margin-bottom: 5px;
+}
+
+.carta-contenido h2 {
+    color: #075985;
+
+    font-size: 30px;
+
+    margin-bottom: 20px;
+}
+
+.carta {
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f0f9ff
+        );
+
+    border-radius: 25px;
+
+    padding: 30px;
+
+    text-align: left;
+
+    box-shadow:
+        0 12px 30px
+        rgba(0, 70, 110, 0.15);
+
+    border-left:
+        5px solid
+        #0284c7;
+}
+
+.carta p {
+    color: #334155;
+
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+
+    font-size: 16px;
+}
+
+.carta strong {
+    color: #0369a1;
+}
+
+.firma {
+    text-align: right;
+
+    color: #075985 !important;
+
+    font-weight: bold;
+
+    margin-top: 30px;
+}
+
+
+/* =========================================
+   CANCIÓN
+========================================= */
+
+.cancion-contenido {
+    width: 100%;
+
+    max-width: 600px;
+
+    text-align: center;
+}
+
+.icono-grande {
+    font-size: 55px;
+
+    margin-bottom: 5px;
+}
+
+.cancion-contenido h2 {
+    color: #075985;
+
+    font-size: 30px;
+
+    margin-bottom: 12px;
+}
+
+.texto-cancion-intro {
+    color: #64748b;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+}
+
+.cancion-tarjeta {
+    background:
+        rgba(255,255,255,0.97);
+
+    border-radius: 28px;
+
+    padding: 30px 22px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 70, 110, 0.18);
+
+    border:
+        2px solid
+        #dbeafe;
+}
+
+.disco {
+    width: 80px;
+
+    height: 80px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0284c7,
+            #075985
+        );
+
+    color: white;
+
+    font-size: 35px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(3, 105, 161, 0.25);
+}
+
+.cancion-tarjeta h3 {
+    color: #075985;
+
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+.cancion-tarjeta > p {
+    color: #64748b;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+
+/* REPRODUCTOR */
+
+audio {
+    display: block;
+
+    width: 100%;
+
+    margin: 20px auto;
+
+    border-radius: 15px;
+}
+
+.mensaje-musica {
+    color: #0369a1 !important;
+
+    font-size: 14px;
+
+    margin-top: 15px !important;
+}
+
+
+/* =========================================
+   SORPRESA
+========================================= */
+
+.sorpresa-contenido {
+    width: 100%;
+
+    max-width: 600px;
+
+    text-align: center;
+}
+
+.sorpresa-contenido h2 {
+    color: #075985;
+
+    font-size: 29px;
+
+    margin-bottom: 20px;
+}
+
+.sorpresa-tarjeta {
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #e0f2fe
+        );
+
+    border-radius: 30px;
+
+    padding: 35px 25px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 70, 110, 0.18);
+
+    border:
+        2px solid
+        #bae6fd;
+}
+
+.corazones {
+    font-size: 25px;
+
+    letter-spacing: 5px;
+
+    margin: 10px 0 20px;
+}
+
+.sorpresa-tarjeta h3 {
+    color: #075985;
+
+    font-size: 23px;
+
+    line-height: 1.5;
+
+    margin-bottom: 20px;
+}
+
+.frase-final {
+    color: #0369a1;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   MÓVIL
+========================================= */
+
+@media (max-width: 600px) {
+
+    .pantalla {
+        padding: 18px 12px;
+    }
+
+    .contenido-inicio {
+        padding: 22px 16px;
+
+        border-radius: 25px;
+    }
+
+    .foto-portada {
+        height: 270px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .logo-hotwheels {
+        font-size: 15px;
+    }
+
+    .subtitulo {
+        font-size: 14px;
+    }
+
+    .separador {
+        font-size: 14px;
+
+        letter-spacing: 1px;
+    }
+
+    .menu-contenido,
+    .semaforo {
+        padding: 25px 17px;
+
+        border-radius: 25px;
+    }
+
+    .menu-contenido h2,
+    .semaforo h2,
+    .cancion-contenido h2,
+    .sorpresa-contenido h2 {
+        font-size: 25px;
+    }
+
+    .carta {
+        padding: 22px 18px;
+    }
+
+    .carta p {
+        font-size: 15px;
+
+        line-height: 1.8;
+    }
+
+    .cancion-tarjeta {
+        padding: 25px 16px;
+    }
+
+    .sorpresa-tarjeta {
+        padding: 28px 18px;
+    }
+
+    .sorpresa-tarjeta h3 {
+        font-size: 20px;
+    }
+
+    .frase-final {
+        font-size: 17px;
+    }
+
+    .opcion-menu {
+        padding: 15px;
+    }
+
+    .contenido-opcion strong {
+        font-size: 16px;
+    }
+
+    .contenido-opcion span {
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================================
+   PANTALLAS MUY PEQUEÑAS
+========================================= */
+
+@media (max-width: 380px) {
+
+    .foto-portada {
+        height: 230px;
+    }
+
+    .teclado {
+        gap: 8px;
+    }
+
+    .teclado button {
+        height: 52px;
+    }
+
+    .carta {
+        padding: 18px 15px;
+    }
+
+}
