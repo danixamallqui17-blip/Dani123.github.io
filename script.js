@@ -1,24 +1,57 @@
+// ======================================
+// CONTRASEÑA
+// ======================================
+
 const CONTRASENA = "1007";
 
 let claveIngresada = "";
 
+
+// ======================================
+// CAMBIAR DE PANTALLA
+// ======================================
+
 function mostrar(id) {
-    document.querySelectorAll(".pantalla").forEach(function(seccion) {
+
+    document.querySelectorAll(".pantalla").forEach(seccion => {
         seccion.classList.remove("activa");
     });
 
-    document.getElementById(id).classList.add("activa");
+    const destino = document.getElementById(id);
 
-    window.scrollTo(0, 0);
+    if (destino) {
+        destino.classList.add("activa");
+    }
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+    if (id === "menu" || id === "sorpresa") {
+        lanzarCorazones();
+    }
 }
+
+
+// ======================================
+// TECLADO DE CONTRASEÑA
+// ======================================
 
 function numero(n) {
 
     if (claveIngresada.length < 4) {
+
         claveIngresada += n;
+
         actualizarDisplay();
     }
 }
+
+
+// ======================================
+// BORRAR
+// ======================================
 
 function borrar() {
 
@@ -26,6 +59,11 @@ function borrar() {
 
     actualizarDisplay();
 }
+
+
+// ======================================
+// MOSTRAR CONTRASEÑA
+// ======================================
 
 function actualizarDisplay() {
 
@@ -39,8 +77,17 @@ function actualizarDisplay() {
         texto += "_";
     }
 
-    document.getElementById("display").textContent = texto;
+    const display = document.getElementById("display");
+
+    if (display) {
+        display.textContent = texto;
+    }
 }
+
+
+// ======================================
+// COMPROBAR CONTRASEÑA
+// ======================================
 
 function entrar() {
 
@@ -52,6 +99,8 @@ function entrar() {
 
         mostrar("menu");
 
+        lanzarCorazones();
+
     } else {
 
         alert("La contraseña no es correcta ❤️");
@@ -61,3 +110,57 @@ function entrar() {
         actualizarDisplay();
     }
 }
+
+
+// ======================================
+// CORAZONES ANIMADOS
+// ======================================
+
+function lanzarCorazones() {
+
+    for (let i = 0; i < 15; i++) {
+
+        setTimeout(() => {
+
+            const corazon = document.createElement("div");
+
+            corazon.className = "corazon";
+
+            const corazones = [
+                "❤️",
+                "💛",
+                "💕",
+                "💖"
+            ];
+
+            corazon.textContent =
+                corazones[Math.floor(Math.random() * corazones.length)];
+
+            corazon.style.left =
+                (5 + Math.random() * 90) + "vw";
+
+            corazon.style.top =
+                (65 + Math.random() * 25) + "vh";
+
+            document.body.appendChild(corazon);
+
+            setTimeout(() => {
+
+                corazon.remove();
+
+            }, 1600);
+
+        }, i * 100);
+    }
+}
+
+
+// ======================================
+// INICIAR DISPLAY
+// ======================================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    actualizarDisplay();
+
+});
