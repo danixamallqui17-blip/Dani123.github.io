@@ -1,97 +1,146 @@
-// ======================================
-// CONTRASEÑA
-// ======================================
+/* =====================================
+   CONTRASEÑA
+===================================== */
 
 const CONTRASENA = "1007";
 
 let claveIngresada = "";
 
 
-// ======================================
-// CAMBIAR DE PANTALLA
-// ======================================
+/* =====================================
+   CAMBIAR DE PANTALLA
+===================================== */
 
 function mostrar(id) {
 
-    document.querySelectorAll(".pantalla").forEach(seccion => {
-        seccion.classList.remove("activa");
-    });
+    document
+        .querySelectorAll(".pantalla")
+        .forEach(seccion => {
 
-    const destino = document.getElementById(id);
+            seccion.classList.remove("activa");
+
+        });
+
+
+    const destino =
+        document.getElementById(id);
+
 
     if (destino) {
+
         destino.classList.add("activa");
+
     }
+
 
     window.scrollTo({
+
         top: 0,
+
         behavior: "smooth"
+
     });
 
-    if (id === "menu" || id === "sorpresa") {
+
+    if (
+        id === "menu" ||
+        id === "sorpresa"
+    ) {
+
         lanzarCorazones();
+
     }
+
 }
 
 
-// ======================================
-// TECLADO DE CONTRASEÑA
-// ======================================
+/* =====================================
+   NÚMEROS
+===================================== */
 
 function numero(n) {
 
-    if (claveIngresada.length < 4) {
+    if (
+        claveIngresada.length < 4
+    ) {
 
         claveIngresada += n;
 
         actualizarDisplay();
+
     }
+
 }
 
 
-// ======================================
-// BORRAR
-// ======================================
+/* =====================================
+   BORRAR
+===================================== */
 
 function borrar() {
 
-    claveIngresada = claveIngresada.slice(0, -1);
+    claveIngresada =
+        claveIngresada.slice(0, -1);
 
     actualizarDisplay();
+
 }
 
 
-// ======================================
-// MOSTRAR CONTRASEÑA
-// ======================================
+/* =====================================
+   ACTUALIZAR DISPLAY
+===================================== */
 
 function actualizarDisplay() {
 
     let texto = "";
 
-    for (let i = 0; i < claveIngresada.length; i++) {
+
+    for (
+        let i = 0;
+        i < claveIngresada.length;
+        i++
+    ) {
+
         texto += "●";
+
     }
 
-    while (texto.length < 4) {
+
+    while (
+        texto.length < 4
+    ) {
+
         texto += "_";
+
     }
 
-    const display = document.getElementById("display");
+
+    const display =
+        document.getElementById(
+            "display"
+        );
+
 
     if (display) {
-        display.textContent = texto;
+
+        display.textContent =
+            texto;
+
     }
+
 }
 
 
-// ======================================
-// COMPROBAR CONTRASEÑA
-// ======================================
+/* =====================================
+   COMPROBAR CONTRASEÑA
+===================================== */
 
 function entrar() {
 
-    if (claveIngresada === CONTRASENA) {
+    if (
+        claveIngresada === CONTRASENA
+    ) {
 
         claveIngresada = "";
 
@@ -101,66 +150,112 @@ function entrar() {
 
         lanzarCorazones();
 
-    } else {
+    }
 
-        alert("La contraseña no es correcta ❤️");
+    else {
+
+        alert(
+            "La contraseña no es correcta ❤️"
+        );
 
         claveIngresada = "";
 
         actualizarDisplay();
+
     }
+
 }
 
 
-// ======================================
-// CORAZONES ANIMADOS
-// ======================================
+/* =====================================
+   CORAZONES ANIMADOS
+===================================== */
 
 function lanzarCorazones() {
 
-    for (let i = 0; i < 15; i++) {
+    const corazones = [
+
+        "❤️",
+        "💕",
+        "💗",
+        "💖",
+        "🌸",
+        "✨"
+
+    ];
+
+
+    for (
+        let i = 0;
+        i < 18;
+        i++
+    ) {
 
         setTimeout(() => {
 
-            const corazon = document.createElement("div");
 
-            corazon.className = "corazon";
+            const corazon =
+                document.createElement(
+                    "div"
+                );
 
-            const corazones = [
-                "❤️",
-                "💛",
-                "💕",
-                "💖"
-            ];
+
+            corazon.className =
+                "corazon";
+
 
             corazon.textContent =
-                corazones[Math.floor(Math.random() * corazones.length)];
+                corazones[
+                    Math.floor(
+                        Math.random()
+                        *
+                        corazones.length
+                    )
+                ];
+
 
             corazon.style.left =
-                (5 + Math.random() * 90) + "vw";
+                (
+                    5 +
+                    Math.random() * 90
+                ) + "vw";
+
 
             corazon.style.top =
-                (65 + Math.random() * 25) + "vh";
+                (
+                    65 +
+                    Math.random() * 25
+                ) + "vh";
 
-            document.body.appendChild(corazon);
+
+            document.body.appendChild(
+                corazon
+            );
+
 
             setTimeout(() => {
 
                 corazon.remove();
 
-            }, 1600);
+            }, 1900);
 
-        }, i * 100);
+
+        }, i * 90);
+
     }
+
 }
 
 
-// ======================================
-// INICIAR DISPLAY
-// ======================================
+/* =====================================
+   INICIO
+===================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
-    actualizarDisplay();
+        actualizarDisplay();
 
-});
+    }
+);
