@@ -1,267 +1,397 @@
+/* =====================================
+   CONFIGURACIÓN GENERAL
+===================================== */
+
 * {
     box-sizing: border-box;
+
     margin: 0;
+
     padding: 0;
 }
+
 
 html {
     scroll-behavior: smooth;
 }
 
+
 body {
-    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
-    background: linear-gradient(
-        135deg,
-        #fff5f7,
-        #fce7ef,
-        #eaf7f5,
-        #f9f0f5
-    );
-    color: #59464f;
+
+    font-family:
+        "Segoe UI",
+        "Trebuchet MS",
+        sans-serif;
+
+    background:
+
+        radial-gradient(
+            circle at top left,
+            #fff8fb,
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at bottom right,
+            #f9e5ee,
+            transparent 40%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fffaf8,
+            #fcecf2
+        );
+
+    color: #5d4a52;
+
     min-height: 100vh;
+
     overflow-x: hidden;
 }
 
 
-/* =================================
+/* =====================================
    PANTALLAS
-================================= */
+===================================== */
 
 .pantalla {
+
     display: none;
+
     min-height: 100vh;
+
     width: 100%;
-    padding: 45px 20px;
+
+    padding: 35px 18px;
+
     align-items: center;
+
     justify-content: center;
+
     text-align: center;
+
     position: relative;
 }
 
+
 .pantalla.activa {
+
     display: flex;
-    animation: aparecer 0.7s ease;
+
+    animation:
+        aparecer 0.7s ease;
 }
 
 
-/* =================================
-   DECORACIÓN
-================================= */
+/* =====================================
+   TÍTULOS
+===================================== */
+
+h1,
+h2 {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+}
+
+
+h2 {
+
+    color: #a85875;
+
+    font-size:
+        clamp(30px, 7vw, 43px);
+
+    margin-bottom: 15px;
+}
+
+
+/* =====================================
+   DECORACIONES
+===================================== */
 
 .decoracion-superior,
 .decoracion-inferior,
 .decoracion-titulo,
 .decoracion-final,
-.corazones-finales,
 .mini-decoracion {
+
     user-select: none;
 }
 
+
 .decoracion-superior {
-    font-size: 25px;
-    margin-bottom: 5px;
-    animation: flotar 3s ease-in-out infinite;
+
+    font-size: 24px;
+
+    margin-bottom: 4px;
+
+    animation:
+        flotar 3s ease-in-out infinite;
 }
 
+
 .decoracion-inferior {
-    font-size: 22px;
+
+    font-size: 21px;
+
     margin-top: 5px;
 }
 
+
 .decoracion-titulo {
+
     font-size: 25px;
+
     margin-bottom: 12px;
+
+    animation:
+        flotar 3s ease-in-out infinite;
 }
 
 
-/* =================================
+/* =====================================
    PORTADA
-================================= */
+===================================== */
 
 #inicio {
-    background: linear-gradient(
-        135deg,
-        #fff8fa,
-        #fdeaf1,
-        #eaf7f7
-    );
+
+    background:
+
+        radial-gradient(
+            circle at top,
+            #ffffff,
+            transparent 55%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fff9fa,
+            #fbe8ef,
+            #edf8f6
+        );
 }
+
 
 .contenido-inicio {
+
     width: 100%;
-    max-width: 620px;
+
+    max-width: 600px;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
 
-    gap: 20px;
+    gap: 18px;
 
-    padding: 20px;
+    padding: 15px;
 }
+
 
 .logo-hotwheels {
-    color: #cf6686;
-    font-size: 18px;
+
+    color: #bd6682;
+
+    font-size: 16px;
+
     font-weight: bold;
-    letter-spacing: 3px;
+
+    letter-spacing: 2px;
 }
 
+
 .foto-portada {
-    width: min(88vw, 420px);
-    max-height: 420px;
+
+    width:
+        min(88vw, 390px);
+
+    max-height: 390px;
 
     object-fit: cover;
 
-    border-radius: 30px;
-    border: 6px solid white;
+    border-radius: 28px;
+
+    border:
+        5px solid white;
 
     box-shadow:
-        0 15px 40px rgba(170, 100, 130, 0.25);
 
-    animation: entradaFoto 1s ease;
+        0 15px 35px
+        rgba(170, 100, 130, 0.20);
+
+    animation:
+        entradaFoto 1s ease;
 }
+
 
 .fecha {
-    color: #bd5978;
 
-    font-size: 19px;
-    font-weight: bold;
-
-    letter-spacing: 3px;
-
-    margin-top: 3px;
-}
-
-h1 {
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: clamp(35px, 8vw, 55px);
-
-    color: #a94f70;
-
-    line-height: 1.3;
-
-    text-shadow:
-        1px 2px 4px rgba(150, 80, 100, 0.15);
-}
-
-.subtitulo {
-    max-width: 450px;
-
-    color: #745b65;
+    color: #b45a78;
 
     font-size: 17px;
 
-    line-height: 1.8;
+    font-weight: bold;
+
+    letter-spacing: 3px;
 }
 
 
-/* =================================
-   BOTONES
-================================= */
+h1 {
+
+    font-size:
+        clamp(34px, 8vw, 52px);
+
+    color: #a64e70;
+
+    line-height: 1.25;
+
+    text-shadow:
+
+        1px 2px 4px
+        rgba(150, 80, 100, 0.12);
+}
+
+
+.subtitulo {
+
+    max-width: 440px;
+
+    color: #745e66;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================
+   BOTÓN PRINCIPAL
+===================================== */
 
 button {
+
     border: none;
+
     cursor: pointer;
+
     font-family: inherit;
 }
 
+
 .btn-principal {
-    background: linear-gradient(
-        135deg,
-        #eba2b9,
-        #d47798
-    );
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #e9a3b9,
+            #d47b99
+        );
 
     color: white;
 
-    padding: 16px 40px;
+    padding:
+        15px 38px;
 
-    border-radius: 35px;
+    border-radius: 40px;
 
     font-size: 18px;
+
     font-weight: bold;
 
     box-shadow:
-        0 8px 22px rgba(190, 100, 130, 0.25);
 
-    transition: 0.3s;
+        0 8px 22px
+        rgba(190, 100, 130, 0.25);
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
 }
+
 
 .btn-principal:hover {
-    transform: translateY(-3px) scale(1.05);
-}
 
-.btn-volver {
-    margin-top: 30px;
+    transform:
+        translateY(-3px)
+        scale(1.04);
 
-    background: white;
+    box-shadow:
 
-    border: 2px solid #dda3b7;
-
-    color: #a94f70;
-
-    padding: 11px 28px;
-
-    border-radius: 25px;
-
-    font-weight: bold;
-
-    transition: 0.3s;
-}
-
-.btn-volver:hover {
-    background: #f9dce6;
-
-    transform: translateY(-2px);
+        0 12px 28px
+        rgba(190, 100, 130, 0.30);
 }
 
 
-/* =================================
+/* =====================================
    CONTRASEÑA
-================================= */
+===================================== */
 
 #clave {
-    background: linear-gradient(
-        135deg,
-        #fff4f7,
-        #edf7f7
-    );
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff7fa,
+            #edf8f7
+        );
 }
 
-.semaforo {
-    width: min(95%, 390px);
 
-    padding: 35px 25px;
+.semaforo {
+
+    width:
+        min(94%, 390px);
+
+    padding:
+        35px 25px;
 
     border-radius: 30px;
 
-    background: rgba(255,255,255,0.9);
+    background:
+        rgba(255,255,255,0.92);
 
-    border: 2px solid #e5b1c2;
+    border:
+        2px solid #e7b4c5;
 
     box-shadow:
-        0 15px 40px rgba(150,100,120,0.15);
+
+        0 15px 40px
+        rgba(150,100,120,0.15);
 }
+
 
 .semaforo h2 {
-    font-size: 30px;
+
+    font-size: 29px;
 }
 
+
 .texto-clave {
-    margin-top: -10px;
+
+    margin-top: -5px;
+
     color: #765e67;
 }
 
+
 #display {
+
     background: #fff8fa;
 
-    border: 2px solid #dfa1b6;
+    border:
+        2px solid #dfa4b7;
 
     border-radius: 15px;
 
-    padding: 17px;
+    padding: 16px;
 
     margin: 25px 0;
 
@@ -272,7 +402,9 @@ button {
     color: #b45777;
 }
 
+
 .teclado {
+
     display: grid;
 
     grid-template-columns:
@@ -281,14 +413,17 @@ button {
     gap: 12px;
 }
 
+
 .teclado button {
-    min-height: 60px;
+
+    min-height: 58px;
 
     border-radius: 18px;
 
-    background: #f7dce5;
+    background: #f8e0e8;
 
-    border: 1px solid #e4b3c3;
+    border:
+        1px solid #e4b4c4;
 
     color: #704957;
 
@@ -299,147 +434,366 @@ button {
     transition: 0.2s;
 }
 
+
 .teclado button:hover {
+
     transform: scale(1.05);
 
-    background: #edbbcc;
+    background: #efc0cf;
 }
+
 
 .teclado .borrar {
-    background: #f3c9d5;
+
+    background: #f5ccd8;
 }
 
+
 .teclado .entrar {
+
     background: #d9829e;
 
     color: white;
 }
 
 
-/* =================================
+/* =====================================
    MENÚ
-================================= */
+===================================== */
+
+#menu {
+
+    background:
+
+        radial-gradient(
+            circle at 15% 15%,
+            #ffffff,
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 85%,
+            #f8dfe9,
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fffaf9,
+            #fbeaf1
+        );
+}
+
 
 .menu-contenido {
-    width: min(95%, 900px);
+
+    width:
+        min(94%, 680px);
+
+    padding:
+        20px 5px;
 }
 
-.menu-contenido > p {
-    margin-bottom: 40px;
 
-    font-size: 18px;
-
-    color: #68535c;
-}
-
-.menu-opciones {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-.opcion-menu {
-    background: rgba(255,255,255,0.88);
-
-    border: 2px solid #e5b4c4;
-
-    border-radius: 28px;
-
-    padding: 32px 18px;
-
-    color: #604952;
-
-    box-shadow:
-        0 10px 25px rgba(150,100,120,0.12);
-
-    transition: 0.35s;
-}
-
-.opcion-menu:hover {
-    transform:
-        translateY(-9px)
-        rotate(1deg);
-
-    box-shadow:
-        0 15px 35px rgba(170,100,130,0.2);
-}
-
-.opcion-menu .icono {
-    display: block;
-
-    font-size: 48px;
-
-    margin-bottom: 18px;
-}
-
-.opcion-menu strong {
-    display: block;
-
-    color: #a94f70;
-
-    font-size: 20px;
+.menu-contenido h2 {
 
     margin-bottom: 10px;
 }
 
-.opcion-menu small {
-    display: block;
 
-    color: #79656d;
+.texto-menu {
 
-    line-height: 1.6;
+    color: #765f68;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+}
+
+
+/* =====================================
+   CUADROS DEL MENÚ
+===================================== */
+
+.menu-opciones {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    width: 100%;
+}
+
+
+.opcion-menu {
+
+    width: 100%;
+
+    min-height: 105px;
+
+    display: flex;
+
+    align-items: center;
+
+    text-align: left;
+
+    position: relative;
+
+    padding:
+        18px 20px;
+
+    background:
+        rgba(255,255,255,0.94);
+
+    border:
+        2px solid #edc3d0;
+
+    border-radius: 25px;
+
+    box-shadow:
+
+        0 8px 22px
+        rgba(170,100,130,0.10);
+
+    color: #5e4a52;
+
+    transition:
+
+        transform 0.3s,
+        box-shadow 0.3s,
+        background 0.3s;
+}
+
+
+/* Línea decorativa */
+
+.opcion-menu::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 18px;
+
+    bottom: 18px;
+
+    width: 5px;
+
+    border-radius: 10px;
+
+    background:
+
+        linear-gradient(
+            #e9a6ba,
+            #d986a1
+        );
+}
+
+
+/* =====================================
+   ICONOS
+===================================== */
+
+.icono-menu {
+
+    width: 65px;
+
+    height: 65px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background:
+        #fff0f5;
+
+    font-size: 32px;
+
+    margin-right: 16px;
+
+    box-shadow:
+
+        inset 0 0 0 1px
+        #f1d2dc;
+}
+
+
+/* =====================================
+   TEXTO DE LAS TARJETAS
+===================================== */
+
+.contenido-opcion {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    flex: 1;
+}
+
+
+.contenido-opcion strong {
+
+    color: #a75270;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 22px;
+}
+
+
+.contenido-opcion span {
+
+    color: #78636b;
 
     font-size: 14px;
+
+    line-height: 1.4;
 }
 
 
-/* =================================
+/* =====================================
+   CORAZÓN LATERAL
+===================================== */
+
+.flecha {
+
+    font-size: 27px;
+
+    color: #d17b98;
+
+    margin-left: 8px;
+
+    transition:
+        transform 0.3s;
+}
+
+
+/* =====================================
+   EFECTO DE LAS TARJETAS
+===================================== */
+
+.opcion-menu:hover {
+
+    transform:
+        translateY(-5px);
+
+    background: #ffffff;
+
+    box-shadow:
+
+        0 14px 30px
+        rgba(170,100,130,0.18);
+}
+
+
+.opcion-menu:hover .flecha {
+
+    transform:
+        scale(1.25)
+        rotate(8deg);
+}
+
+
+/* =====================================
+   FRASE INFERIOR
+===================================== */
+
+.frase-menu {
+
+    margin-top: 32px;
+
+    color: #9a7180;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================
    CARTA
-================================= */
+===================================== */
 
 .carta-contenido {
-    width: min(95%, 750px);
+
+    width:
+        min(94%, 750px);
 }
 
+
 .sobre-decoracion {
+
     font-size: 40px;
 
     margin-bottom: 5px;
 }
 
+
 .carta {
-    background: #fffdf8;
+
+    background:
+        #fffdf9;
 
     color: #55434b;
 
-    padding: 45px 35px;
+    padding:
+        42px 32px;
 
-    border-radius: 25px;
+    border-radius: 26px;
 
     text-align: left;
 
-    box-shadow:
-        0 15px 35px rgba(130,90,110,0.15);
+    border:
+        2px solid #f0d5dd;
 
-    position: relative;
+    box-shadow:
+
+        0 15px 35px
+        rgba(130,90,110,0.14);
 }
 
+
 .carta p {
-    margin-bottom: 25px;
+
+    margin-bottom: 24px;
 
     font-size: 17px;
 
     line-height: 2;
 }
 
+
 .carta strong {
+
     color: #c45d7c;
 }
 
+
 .frase-final {
+
     text-align: center;
 
     font-family:
@@ -451,7 +805,7 @@ button {
 
     color: #b25372;
 
-    font-size: 20px;
+    font-size: 19px;
 
     line-height: 1.8;
 
@@ -464,38 +818,52 @@ button {
 }
 
 
-/* =================================
+/* =====================================
    CANCIÓN
-================================= */
+===================================== */
 
 .cancion-contenido {
-    width: min(95%, 700px);
+
+    width:
+        min(94%, 700px);
 }
 
+
 .intro-cancion {
+
     margin-bottom: 25px;
 
     color: #6e5962;
 }
 
+
 .video-contenedor {
+
     width: 100%;
 }
 
+
 .video-musica {
+
     width: 100%;
 
-    aspect-ratio: 16 / 9;
+    aspect-ratio:
+        16 / 9;
 
     border-radius: 22px;
 
-    border: 5px solid white;
+    border:
+        5px solid white;
 
     box-shadow:
-        0 12px 30px rgba(120,90,110,0.2);
+
+        0 12px 30px
+        rgba(120,90,110,0.20);
 }
 
+
 .nota-musica {
+
     margin-top: 22px;
 
     color: #6b555e;
@@ -506,20 +874,25 @@ button {
 }
 
 
-/* =================================
-   SORPRESA
-================================= */
+/* =====================================
+   SORPRESA FINAL
+===================================== */
 
 .sorpresa-contenido {
-    width: min(95%, 700px);
+
+    width:
+        min(94%, 700px);
 }
 
+
 .sorpresa-card {
+
     background:
+
         linear-gradient(
             145deg,
-            rgba(255,255,255,0.94),
-            rgba(255,244,248,0.94)
+            rgba(255,255,255,0.96),
+            rgba(255,242,247,0.96)
         );
 
     border:
@@ -527,22 +900,30 @@ button {
 
     border-radius: 30px;
 
-    padding: 50px 25px;
+    padding:
+        50px 25px;
 
     box-shadow:
-        0 15px 35px rgba(150,90,120,0.18);
+
+        0 15px 35px
+        rgba(150,90,120,0.18);
 }
 
+
 .autos {
-    font-size: 58px;
+
+    font-size: 55px;
 
     margin: 25px 0;
 
     animation:
-        movimientoAuto 1.5s infinite alternate;
+        movimientoAuto
+        1.5s infinite alternate;
 }
 
+
 .mensaje-final {
+
     font-family:
         Georgia,
         "Times New Roman",
@@ -558,7 +939,9 @@ button {
     line-height: 1.4;
 }
 
+
 .firma {
+
     margin-top: 30px;
 
     font-size: 18px;
@@ -568,7 +951,9 @@ button {
     color: #715963;
 }
 
+
 .corazones-finales {
+
     font-size: 25px;
 
     margin-top: 25px;
@@ -578,11 +963,47 @@ button {
 }
 
 
-/* =================================
-   CORAZONES
-================================= */
+/* =====================================
+   BOTÓN VOLVER
+===================================== */
+
+.btn-volver {
+
+    margin-top: 30px;
+
+    background: white;
+
+    border:
+        2px solid #dda3b7;
+
+    color: #a94f70;
+
+    padding:
+        11px 28px;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+.btn-volver:hover {
+
+    background: #f9dce6;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =====================================
+   CORAZONES ANIMADOS
+===================================== */
 
 .corazon {
+
     position: fixed;
 
     z-index: 9999;
@@ -592,275 +1013,624 @@ button {
     pointer-events: none;
 
     animation:
-        subirCorazon 1.8s ease-out
+        subirCorazon
+        1.8s ease-out
         forwards;
 }
 
 
-/* {
+/* =====================================
+   ANIMACIONES
+===================================== */
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes entradaFoto {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.9);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+@keyframes flotar {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-7px);
+    }
+}
+
+
+@keyframes movimientoAuto {
+
+    from {
+
+        transform:
+            translateX(-12px);
+    }
+
+    to {
+
+        transform:
+            translateX(12px);
+    }
+}
+
+
+@keyframes subirCorazon {
+
+    0% {
+
+        transform:
+            translateY(0)
+            scale(0.5);
+
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            translateY(-200px)
+            scale(1.4)
+            rotate(20deg);
+
+        opacity: 0;
+    }
+}
+
+
+@keyframes latido {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+    }
+
+    50% {
+
+        transform:
+            scale(1.15);
+    }
+}
+
+
+/* =====================================
+   CELULAR
+===================================== */
+
+@media (max-width: 600px) {
+
+    .pantalla {
+
+        padding:
+            28px 14px;
+    }
+
+
+    .contenido-inicio {
+
+        padding: 8px;
+    }
+
+
+    .foto-portada {
+
+        width:
+            min(88vw, 350px);
+
+        max-height: 350px;
+    }
+
+
+    .menu-contenido {
+
+        padding:
+            10px 2px;
+    }
+
+
+    .opcion-menu {
+
+        min-height: 100px;
+
+        padding:
+            16px 15px;
+    }
+
+
+    .icono-menu {
+
+        width: 58px;
+
+        height: 58px;
+
+        font-size: 28px;
+
+        margin-right: 13px;
+    }
+
+
+    .contenido-opcion strong {
+
+        font-size: 20px;
+    }
+
+
+    .contenido-opcion span {
+
+        font-size: 13px;
+    }
+
+
+    .flecha {
+
+        font-size: 23px;
+    }
+
+
+    .carta {
+
+        padding:
+            32px 22px;
+    }
+
+
+    .carta p {
+
+        font-size: 16px;
+
+        line-height: 1.9;
+    }
+
+
+    .frase-final {
+
+        font-size: 18px;
+    }
+
+
+    .sorpresa-card {
+
+        padding:
+            40px 20px;
+    }
+
+}/* =====================================
+   CONFIGURACIÓN GENERAL
+===================================== */
+
+* {
     box-sizing: border-box;
+
     margin: 0;
+
     padding: 0;
 }
+
 
 html {
     scroll-behavior: smooth;
 }
 
+
 body {
-    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
-    background: linear-gradient(
-        135deg,
-        #fff5f7,
-        #fce7ef,
-        #eaf7f5,
-        #f9f0f5
-    );
-    color: #59464f;
+
+    font-family:
+        "Segoe UI",
+        "Trebuchet MS",
+        sans-serif;
+
+    background:
+
+        radial-gradient(
+            circle at top left,
+            #fff8fb,
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at bottom right,
+            #f9e5ee,
+            transparent 40%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fffaf8,
+            #fcecf2
+        );
+
+    color: #5d4a52;
+
     min-height: 100vh;
+
     overflow-x: hidden;
 }
 
 
-/* =================================
+/* =====================================
    PANTALLAS
-================================= */
+===================================== */
 
 .pantalla {
+
     display: none;
+
     min-height: 100vh;
+
     width: 100%;
-    padding: 45px 20px;
+
+    padding: 35px 18px;
+
     align-items: center;
+
     justify-content: center;
+
     text-align: center;
+
     position: relative;
 }
 
+
 .pantalla.activa {
+
     display: flex;
-    animation: aparecer 0.7s ease;
+
+    animation:
+        aparecer 0.7s ease;
 }
 
 
-/* =================================
-   DECORACIÓN
-================================= */
+/* =====================================
+   TÍTULOS
+===================================== */
+
+h1,
+h2 {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+}
+
+
+h2 {
+
+    color: #a85875;
+
+    font-size:
+        clamp(30px, 7vw, 43px);
+
+    margin-bottom: 15px;
+}
+
+
+/* =====================================
+   DECORACIONES
+===================================== */
 
 .decoracion-superior,
 .decoracion-inferior,
 .decoracion-titulo,
 .decoracion-final,
-.corazones-finales,
 .mini-decoracion {
+
     user-select: none;
 }
 
+
 .decoracion-superior {
-    font-size: 25px;
-    margin-bottom: 5px;
-    animation: flotar 3s ease-in-out infinite;
+
+    font-size: 24px;
+
+    margin-bottom: 4px;
+
+    animation:
+        flotar 3s ease-in-out infinite;
 }
 
+
 .decoracion-inferior {
-    font-size: 22px;
+
+    font-size: 21px;
+
     margin-top: 5px;
 }
 
+
 .decoracion-titulo {
+
     font-size: 25px;
+
     margin-bottom: 12px;
+
+    animation:
+        flotar 3s ease-in-out infinite;
 }
 
 
-/* =================================
+/* =====================================
    PORTADA
-================================= */
+===================================== */
 
 #inicio {
-    background: linear-gradient(
-        135deg,
-        #fff8fa,
-        #fdeaf1,
-        #eaf7f7
-    );
+
+    background:
+
+        radial-gradient(
+            circle at top,
+            #ffffff,
+            transparent 55%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fff9fa,
+            #fbe8ef,
+            #edf8f6
+        );
 }
+
 
 .contenido-inicio {
+
     width: 100%;
-    max-width: 620px;
+
+    max-width: 600px;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
 
-    gap: 20px;
+    gap: 18px;
 
-    padding: 20px;
+    padding: 15px;
 }
+
 
 .logo-hotwheels {
-    color: #cf6686;
-    font-size: 18px;
+
+    color: #bd6682;
+
+    font-size: 16px;
+
     font-weight: bold;
-    letter-spacing: 3px;
+
+    letter-spacing: 2px;
 }
 
+
 .foto-portada {
-    width: min(88vw, 420px);
-    max-height: 420px;
+
+    width:
+        min(88vw, 390px);
+
+    max-height: 390px;
 
     object-fit: cover;
 
-    border-radius: 30px;
-    border: 6px solid white;
+    border-radius: 28px;
+
+    border:
+        5px solid white;
 
     box-shadow:
-        0 15px 40px rgba(170, 100, 130, 0.25);
 
-    animation: entradaFoto 1s ease;
+        0 15px 35px
+        rgba(170, 100, 130, 0.20);
+
+    animation:
+        entradaFoto 1s ease;
 }
+
 
 .fecha {
-    color: #bd5978;
 
-    font-size: 19px;
-    font-weight: bold;
-
-    letter-spacing: 3px;
-
-    margin-top: 3px;
-}
-
-h1 {
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: clamp(35px, 8vw, 55px);
-
-    color: #a94f70;
-
-    line-height: 1.3;
-
-    text-shadow:
-        1px 2px 4px rgba(150, 80, 100, 0.15);
-}
-
-.subtitulo {
-    max-width: 450px;
-
-    color: #745b65;
+    color: #b45a78;
 
     font-size: 17px;
 
-    line-height: 1.8;
+    font-weight: bold;
+
+    letter-spacing: 3px;
 }
 
 
-/* =================================
-   BOTONES
-================================= */
+h1 {
+
+    font-size:
+        clamp(34px, 8vw, 52px);
+
+    color: #a64e70;
+
+    line-height: 1.25;
+
+    text-shadow:
+
+        1px 2px 4px
+        rgba(150, 80, 100, 0.12);
+}
+
+
+.subtitulo {
+
+    max-width: 440px;
+
+    color: #745e66;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================
+   BOTÓN PRINCIPAL
+===================================== */
 
 button {
+
     border: none;
+
     cursor: pointer;
+
     font-family: inherit;
 }
 
+
 .btn-principal {
-    background: linear-gradient(
-        135deg,
-        #eba2b9,
-        #d47798
-    );
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #e9a3b9,
+            #d47b99
+        );
 
     color: white;
 
-    padding: 16px 40px;
+    padding:
+        15px 38px;
 
-    border-radius: 35px;
+    border-radius: 40px;
 
     font-size: 18px;
+
     font-weight: bold;
 
     box-shadow:
-        0 8px 22px rgba(190, 100, 130, 0.25);
 
-    transition: 0.3s;
+        0 8px 22px
+        rgba(190, 100, 130, 0.25);
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
 }
+
 
 .btn-principal:hover {
-    transform: translateY(-3px) scale(1.05);
-}
 
-.btn-volver {
-    margin-top: 30px;
+    transform:
+        translateY(-3px)
+        scale(1.04);
 
-    background: white;
+    box-shadow:
 
-    border: 2px solid #dda3b7;
-
-    color: #a94f70;
-
-    padding: 11px 28px;
-
-    border-radius: 25px;
-
-    font-weight: bold;
-
-    transition: 0.3s;
-}
-
-.btn-volver:hover {
-    background: #f9dce6;
-
-    transform: translateY(-2px);
+        0 12px 28px
+        rgba(190, 100, 130, 0.30);
 }
 
 
-/* =================================
+/* =====================================
    CONTRASEÑA
-================================= */
+===================================== */
 
 #clave {
-    background: linear-gradient(
-        135deg,
-        #fff4f7,
-        #edf7f7
-    );
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff7fa,
+            #edf8f7
+        );
 }
 
-.semaforo {
-    width: min(95%, 390px);
 
-    padding: 35px 25px;
+.semaforo {
+
+    width:
+        min(94%, 390px);
+
+    padding:
+        35px 25px;
 
     border-radius: 30px;
 
-    background: rgba(255,255,255,0.9);
+    background:
+        rgba(255,255,255,0.92);
 
-    border: 2px solid #e5b1c2;
+    border:
+        2px solid #e7b4c5;
 
     box-shadow:
-        0 15px 40px rgba(150,100,120,0.15);
+
+        0 15px 40px
+        rgba(150,100,120,0.15);
 }
+
 
 .semaforo h2 {
-    font-size: 30px;
+
+    font-size: 29px;
 }
 
+
 .texto-clave {
-    margin-top: -10px;
+
+    margin-top: -5px;
+
     color: #765e67;
 }
 
+
 #display {
+
     background: #fff8fa;
 
-    border: 2px solid #dfa1b6;
+    border:
+        2px solid #dfa4b7;
 
     border-radius: 15px;
 
-    padding: 17px;
+    padding: 16px;
 
     margin: 25px 0;
 
@@ -871,7 +1641,9 @@ button {
     color: #b45777;
 }
 
+
 .teclado {
+
     display: grid;
 
     grid-template-columns:
@@ -880,14 +1652,17 @@ button {
     gap: 12px;
 }
 
+
 .teclado button {
-    min-height: 60px;
+
+    min-height: 58px;
 
     border-radius: 18px;
 
-    background: #f7dce5;
+    background: #f8e0e8;
 
-    border: 1px solid #e4b3c3;
+    border:
+        1px solid #e4b4c4;
 
     color: #704957;
 
@@ -898,147 +1673,366 @@ button {
     transition: 0.2s;
 }
 
+
 .teclado button:hover {
+
     transform: scale(1.05);
 
-    background: #edbbcc;
+    background: #efc0cf;
 }
+
 
 .teclado .borrar {
-    background: #f3c9d5;
+
+    background: #f5ccd8;
 }
 
+
 .teclado .entrar {
+
     background: #d9829e;
 
     color: white;
 }
 
 
-/* =================================
+/* =====================================
    MENÚ
-================================= */
+===================================== */
+
+#menu {
+
+    background:
+
+        radial-gradient(
+            circle at 15% 15%,
+            #ffffff,
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 85%,
+            #f8dfe9,
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fffaf9,
+            #fbeaf1
+        );
+}
+
 
 .menu-contenido {
-    width: min(95%, 900px);
+
+    width:
+        min(94%, 680px);
+
+    padding:
+        20px 5px;
 }
 
-.menu-contenido > p {
-    margin-bottom: 40px;
 
-    font-size: 18px;
-
-    color: #68535c;
-}
-
-.menu-opciones {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-.opcion-menu {
-    background: rgba(255,255,255,0.88);
-
-    border: 2px solid #e5b4c4;
-
-    border-radius: 28px;
-
-    padding: 32px 18px;
-
-    color: #604952;
-
-    box-shadow:
-        0 10px 25px rgba(150,100,120,0.12);
-
-    transition: 0.35s;
-}
-
-.opcion-menu:hover {
-    transform:
-        translateY(-9px)
-        rotate(1deg);
-
-    box-shadow:
-        0 15px 35px rgba(170,100,130,0.2);
-}
-
-.opcion-menu .icono {
-    display: block;
-
-    font-size: 48px;
-
-    margin-bottom: 18px;
-}
-
-.opcion-menu strong {
-    display: block;
-
-    color: #a94f70;
-
-    font-size: 20px;
+.menu-contenido h2 {
 
     margin-bottom: 10px;
 }
 
-.opcion-menu small {
-    display: block;
 
-    color: #79656d;
+.texto-menu {
 
-    line-height: 1.6;
+    color: #765f68;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+}
+
+
+/* =====================================
+   CUADROS DEL MENÚ
+===================================== */
+
+.menu-opciones {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    width: 100%;
+}
+
+
+.opcion-menu {
+
+    width: 100%;
+
+    min-height: 105px;
+
+    display: flex;
+
+    align-items: center;
+
+    text-align: left;
+
+    position: relative;
+
+    padding:
+        18px 20px;
+
+    background:
+        rgba(255,255,255,0.94);
+
+    border:
+        2px solid #edc3d0;
+
+    border-radius: 25px;
+
+    box-shadow:
+
+        0 8px 22px
+        rgba(170,100,130,0.10);
+
+    color: #5e4a52;
+
+    transition:
+
+        transform 0.3s,
+        box-shadow 0.3s,
+        background 0.3s;
+}
+
+
+/* Línea decorativa */
+
+.opcion-menu::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 18px;
+
+    bottom: 18px;
+
+    width: 5px;
+
+    border-radius: 10px;
+
+    background:
+
+        linear-gradient(
+            #e9a6ba,
+            #d986a1
+        );
+}
+
+
+/* =====================================
+   ICONOS
+===================================== */
+
+.icono-menu {
+
+    width: 65px;
+
+    height: 65px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background:
+        #fff0f5;
+
+    font-size: 32px;
+
+    margin-right: 16px;
+
+    box-shadow:
+
+        inset 0 0 0 1px
+        #f1d2dc;
+}
+
+
+/* =====================================
+   TEXTO DE LAS TARJETAS
+===================================== */
+
+.contenido-opcion {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    flex: 1;
+}
+
+
+.contenido-opcion strong {
+
+    color: #a75270;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 22px;
+}
+
+
+.contenido-opcion span {
+
+    color: #78636b;
 
     font-size: 14px;
+
+    line-height: 1.4;
 }
 
 
-/* =================================
+/* =====================================
+   CORAZÓN LATERAL
+===================================== */
+
+.flecha {
+
+    font-size: 27px;
+
+    color: #d17b98;
+
+    margin-left: 8px;
+
+    transition:
+        transform 0.3s;
+}
+
+
+/* =====================================
+   EFECTO DE LAS TARJETAS
+===================================== */
+
+.opcion-menu:hover {
+
+    transform:
+        translateY(-5px);
+
+    background: #ffffff;
+
+    box-shadow:
+
+        0 14px 30px
+        rgba(170,100,130,0.18);
+}
+
+
+.opcion-menu:hover .flecha {
+
+    transform:
+        scale(1.25)
+        rotate(8deg);
+}
+
+
+/* =====================================
+   FRASE INFERIOR
+===================================== */
+
+.frase-menu {
+
+    margin-top: 32px;
+
+    color: #9a7180;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================
    CARTA
-================================= */
+===================================== */
 
 .carta-contenido {
-    width: min(95%, 750px);
+
+    width:
+        min(94%, 750px);
 }
 
+
 .sobre-decoracion {
+
     font-size: 40px;
 
     margin-bottom: 5px;
 }
 
+
 .carta {
-    background: #fffdf8;
+
+    background:
+        #fffdf9;
 
     color: #55434b;
 
-    padding: 45px 35px;
+    padding:
+        42px 32px;
 
-    border-radius: 25px;
+    border-radius: 26px;
 
     text-align: left;
 
-    box-shadow:
-        0 15px 35px rgba(130,90,110,0.15);
+    border:
+        2px solid #f0d5dd;
 
-    position: relative;
+    box-shadow:
+
+        0 15px 35px
+        rgba(130,90,110,0.14);
 }
 
+
 .carta p {
-    margin-bottom: 25px;
+
+    margin-bottom: 24px;
 
     font-size: 17px;
 
     line-height: 2;
 }
 
+
 .carta strong {
+
     color: #c45d7c;
 }
 
+
 .frase-final {
+
     text-align: center;
 
     font-family:
@@ -1050,7 +2044,7 @@ button {
 
     color: #b25372;
 
-    font-size: 20px;
+    font-size: 19px;
 
     line-height: 1.8;
 
@@ -1063,38 +2057,52 @@ button {
 }
 
 
-/* =================================
+/* =====================================
    CANCIÓN
-================================= */
+===================================== */
 
 .cancion-contenido {
-    width: min(95%, 700px);
+
+    width:
+        min(94%, 700px);
 }
 
+
 .intro-cancion {
+
     margin-bottom: 25px;
 
     color: #6e5962;
 }
 
+
 .video-contenedor {
+
     width: 100%;
 }
 
+
 .video-musica {
+
     width: 100%;
 
-    aspect-ratio: 16 / 9;
+    aspect-ratio:
+        16 / 9;
 
     border-radius: 22px;
 
-    border: 5px solid white;
+    border:
+        5px solid white;
 
     box-shadow:
-        0 12px 30px rgba(120,90,110,0.2);
+
+        0 12px 30px
+        rgba(120,90,110,0.20);
 }
 
+
 .nota-musica {
+
     margin-top: 22px;
 
     color: #6b555e;
@@ -1105,20 +2113,25 @@ button {
 }
 
 
-/* =================================
-   SORPRESA
-================================= */
+/* =====================================
+   SORPRESA FINAL
+===================================== */
 
 .sorpresa-contenido {
-    width: min(95%, 700px);
+
+    width:
+        min(94%, 700px);
 }
 
+
 .sorpresa-card {
+
     background:
+
         linear-gradient(
             145deg,
-            rgba(255,255,255,0.94),
-            rgba(255,244,248,0.94)
+            rgba(255,255,255,0.96),
+            rgba(255,242,247,0.96)
         );
 
     border:
@@ -1126,22 +2139,30 @@ button {
 
     border-radius: 30px;
 
-    padding: 50px 25px;
+    padding:
+        50px 25px;
 
     box-shadow:
-        0 15px 35px rgba(150,90,120,0.18);
+
+        0 15px 35px
+        rgba(150,90,120,0.18);
 }
 
+
 .autos {
-    font-size: 58px;
+
+    font-size: 55px;
 
     margin: 25px 0;
 
     animation:
-        movimientoAuto 1.5s infinite alternate;
+        movimientoAuto
+        1.5s infinite alternate;
 }
 
+
 .mensaje-final {
+
     font-family:
         Georgia,
         "Times New Roman",
@@ -1157,7 +2178,9 @@ button {
     line-height: 1.4;
 }
 
+
 .firma {
+
     margin-top: 30px;
 
     font-size: 18px;
@@ -1167,7 +2190,9 @@ button {
     color: #715963;
 }
 
+
 .corazones-finales {
+
     font-size: 25px;
 
     margin-top: 25px;
@@ -1177,11 +2202,47 @@ button {
 }
 
 
-/* =================================
-   CORAZONES
-================================= */
+/* =====================================
+   BOTÓN VOLVER
+===================================== */
+
+.btn-volver {
+
+    margin-top: 30px;
+
+    background: white;
+
+    border:
+        2px solid #dda3b7;
+
+    color: #a94f70;
+
+    padding:
+        11px 28px;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+.btn-volver:hover {
+
+    background: #f9dce6;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =====================================
+   CORAZONES ANIMADOS
+===================================== */
 
 .corazon {
+
     position: fixed;
 
     z-index: 9999;
@@ -1191,9 +2252,228 @@ button {
     pointer-events: none;
 
     animation:
-        subirCorazon 1.8s ease-out
+        subirCorazon
+        1.8s ease-out
         forwards;
 }
 
 
-/
+/* =====================================
+   ANIMACIONES
+===================================== */
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes entradaFoto {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.9);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+@keyframes flotar {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-7px);
+    }
+}
+
+
+@keyframes movimientoAuto {
+
+    from {
+
+        transform:
+            translateX(-12px);
+    }
+
+    to {
+
+        transform:
+            translateX(12px);
+    }
+}
+
+
+@keyframes subirCorazon {
+
+    0% {
+
+        transform:
+            translateY(0)
+            scale(0.5);
+
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            translateY(-200px)
+            scale(1.4)
+            rotate(20deg);
+
+        opacity: 0;
+    }
+}
+
+
+@keyframes latido {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+    }
+
+    50% {
+
+        transform:
+            scale(1.15);
+    }
+}
+
+
+/* =====================================
+   CELULAR
+===================================== */
+
+@media (max-width: 600px) {
+
+    .pantalla {
+
+        padding:
+            28px 14px;
+    }
+
+
+    .contenido-inicio {
+
+        padding: 8px;
+    }
+
+
+    .foto-portada {
+
+        width:
+            min(88vw, 350px);
+
+        max-height: 350px;
+    }
+
+
+    .menu-contenido {
+
+        padding:
+            10px 2px;
+    }
+
+
+    .opcion-menu {
+
+        min-height: 100px;
+
+        padding:
+            16px 15px;
+    }
+
+
+    .icono-menu {
+
+        width: 58px;
+
+        height: 58px;
+
+        font-size: 28px;
+
+        margin-right: 13px;
+    }
+
+
+    .contenido-opcion strong {
+
+        font-size: 20px;
+    }
+
+
+    .contenido-opcion span {
+
+        font-size: 13px;
+    }
+
+
+    .flecha {
+
+        font-size: 23px;
+    }
+
+
+    .carta {
+
+        padding:
+            32px 22px;
+    }
+
+
+    .carta p {
+
+        font-size: 16px;
+
+        line-height: 1.9;
+    }
+
+
+    .frase-final {
+
+        font-size: 18px;
+    }
+
+
+    .sorpresa-card {
+
+        padding:
+            40px 20px;
+    }
+
+    }
