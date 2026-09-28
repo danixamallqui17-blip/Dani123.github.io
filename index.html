@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Un regalo para ti ❤️</title>
 
     <link rel="stylesheet" href="estilo.css">
@@ -10,15 +11,32 @@
 
 <body>
 
-    <!-- INICIO -->
+    <!-- =========================
+         PORTADA
+    ========================== -->
+
     <section id="inicio" class="pantalla activa">
+
         <div class="contenido-inicio">
 
-            <div class="logo-hotwheels">🔥 HOT WHEELS 🔥</div>
+            <div class="logo-hotwheels">
+                🔥 HOT WHEELS 🔥
+            </div>
 
-            <p class="fecha">30 DE SEPTIEMBRE</p>
+            <!-- FOTO DE PORTADA -->
+            <img
+                src="portada.jpg"
+                alt="Nuestro recuerdo"
+                class="foto-portada"
+            >
 
-            <h1>Un regalo para ti ❤️</h1>
+            <p class="fecha">
+                30 DE SEPTIEMBRE
+            </p>
+
+            <h1>
+                Un regalo para ti ❤️
+            </h1>
 
             <p class="subtitulo">
                 Preparé algo especial para ti...
@@ -29,19 +47,33 @@
             </button>
 
         </div>
+
     </section>
 
 
-    <!-- CONTRASEÑA -->
+    <!-- =========================
+         CONTRASEÑA
+    ========================== -->
+
     <section id="password" class="pantalla">
 
         <div class="contenido">
 
-            <h2>🔐 Una sorpresa te espera</h2>
+            <div class="semaforo">
+                🚦
+            </div>
 
-            <p>Ingresa la fecha especial ❤️</p>
+            <h2>
+                🔐 Una sorpresa te espera
+            </h2>
 
-            <div id="display">____</div>
+            <p>
+                Ingresa la fecha especial ❤️
+            </p>
+
+            <div id="display">
+                ____
+            </div>
 
             <div class="teclado">
 
@@ -72,35 +104,92 @@
     </section>
 
 
-    <!-- MENÚ -->
+    <!-- =========================
+         MENÚ DE REGALOS
+    ========================== -->
+
     <section id="menu" class="pantalla">
 
         <div class="contenido">
 
-            <h1>🏎️ ¡Lo lograste! ❤️</h1>
+            <div class="pista-carrera">
+                🏁 FINISH LINE 🏁
+            </div>
+
+            <h1>
+                🏎️ ¡Lo lograste! ❤️
+            </h1>
 
             <p>
-                Ahora puedes descubrir cada parte de tu regalo...
+                Ahora puedes descubrir cada parte
+                de tu regalo...
             </p>
 
             <div class="regalos">
 
-                <div class="regalo" onclick="mostrar('carta')">
-                    <div class="icono">💌</div>
-                    <h3>Una carta</h3>
-                    <p>Algo que quiero decirte</p>
+                <!-- CARTA -->
+
+                <div
+                    class="regalo"
+                    onclick="mostrar('carta')"
+                >
+
+                    <div class="icono">
+                        💌
+                    </div>
+
+                    <h3>
+                        Una carta
+                    </h3>
+
+                    <p>
+                        Algo que quiero decirte
+                    </p>
+
                 </div>
 
-                <div class="regalo" onclick="mostrar('cancion')">
-                    <div class="icono">🎵</div>
-                    <h3>Nuestra canción</h3>
-                    <p>Una canción para nosotros</p>
+
+                <!-- CANCIÓN -->
+
+                <div
+                    class="regalo"
+                    onclick="mostrar('cancion')"
+                >
+
+                    <div class="icono">
+                        🎵
+                    </div>
+
+                    <h3>
+                        Nuestra canción
+                    </h3>
+
+                    <p>
+                        Una canción para nosotros
+                    </p>
+
                 </div>
 
-                <div class="regalo" onclick="mostrar('mensaje')">
-                    <div class="icono">🏆</div>
-                    <h3>Una sorpresa</h3>
-                    <p>Para terminar este recorrido</p>
+
+                <!-- SORPRESA -->
+
+                <div
+                    class="regalo"
+                    onclick="mostrar('mensaje')"
+                >
+
+                    <div class="icono">
+                        🏆
+                    </div>
+
+                    <h3>
+                        Una sorpresa
+                    </h3>
+
+                    <p>
+                        Para terminar este recorrido
+                    </p>
+
                 </div>
 
             </div>
@@ -110,14 +199,21 @@
     </section>
 
 
-    <!-- CARTA -->
+    <!-- =========================
+         CARTA
+    ========================== -->
+
     <section id="carta" class="pantalla">
 
         <div class="contenido">
 
-            <div class="sobre">💌</div>
+            <div class="sobre">
+                💌
+            </div>
 
-            <h1>Para ti ❤️</h1>
+            <h1>
+                Para ti ❤️
+            </h1>
 
             <div class="carta">
 
@@ -128,13 +224,13 @@
                 </p>
 
                 <p>
-                    Que nunca nos falten aventuras, risas y
-                    momentos para recordar.
+                    Que nunca nos falten aventuras, risas
+                    y momentos para recordar.
                 </p>
 
                 <p>
-                    Porque tú, mi motor, haces que mi vida sea
-                    una gran carrera llena de emoción.
+                    Porque tú, mi motor, haces que mi vida
+                    sea una gran carrera llena de emoción.
                 </p>
 
                 <p>
@@ -143,12 +239,14 @@
                 </p>
 
                 <div class="frase-final">
+
                     “ERES LA CHISPA QUE ENCIENDE MI CORAZÓN
                     Y ME LLEVA A TODA VELOCIDAD HACIA TI”
+
                 </div>
 
                 <div class="firma">
-                    ❤️ Con amor
+                    ❤️ Con todo mi amor
                 </div>
 
             </div>
@@ -162,18 +260,27 @@
     </section>
 
 
-    <!-- CANCIÓN -->
+    <!-- =========================
+         CANCIÓN
+    ========================== -->
+
     <section id="cancion" class="pantalla">
 
         <div class="contenido">
 
-            <div class="disco">💿</div>
+            <div class="disco">
+                💿
+            </div>
 
-            <h1>🎵 Nuestra canción</h1>
+            <h1>
+                🎵 Nuestra canción
+            </h1>
 
-            <p>
+            <p class="texto-cancion">
+
                 Porque hay canciones que simplemente
                 nos hacen pensar en alguien especial ❤️
+
             </p>
 
             <div class="video-musica">
@@ -190,6 +297,10 @@
 
             </div>
 
+            <p class="nota-musica">
+                ❤️ Esta canción es para ti ❤️
+            </p>
+
             <button onclick="mostrar('menu')">
                 ← Volver
             </button>
@@ -199,22 +310,34 @@
     </section>
 
 
-    <!-- SORPRESA FINAL -->
+    <!-- =========================
+         SORPRESA FINAL
+    ========================== -->
+
     <section id="mensaje" class="pantalla">
 
         <div class="contenido">
 
-            <div class="trofeo">🏆</div>
+            <div class="trofeo">
+                🏆
+            </div>
 
-            <h1>🏁 Llegaste al final ❤️</h1>
+            <h1>
+                🏁 Llegaste al final ❤️
+            </h1>
 
             <p class="mensaje-final">
+
                 Si pudiera elegir nuevamente mi camino,
                 volvería a elegirte a ti.
+
             </p>
 
             <p class="mensaje-final">
-                Porque entre tantos caminos, carreras y destinos...
+
+                Porque entre tantos caminos,
+                carreras y destinos...
+
             </p>
 
             <h2>
@@ -237,6 +360,8 @@
 
     </section>
 
+
+    <!-- JAVASCRIPT -->
 
     <script src="script.js"></script>
 
