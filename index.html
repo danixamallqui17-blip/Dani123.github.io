@@ -172,7 +172,6 @@
                 de nuestra historia.
             </p>
 
-
             <div class="menu-opciones">
 
                 <!-- CARTA -->
@@ -266,12 +265,9 @@
 
             </div>
 
-
             <div class="frase-menu">
-
                 ✨ Porque algunas historias están
                 destinadas a encontrarse... ✨
-
             </div>
 
         </div>
@@ -299,7 +295,6 @@
                 Para ti ❤️
             </h2>
 
-
             <div class="carta">
 
                 <p>
@@ -325,7 +320,6 @@
                 </p>
 
             </div>
-
 
             <button
                 class="btn-volver"
@@ -364,7 +358,6 @@
                 nos hacen recordar a alguien especial.
             </p>
 
-
             <div class="cancion-tarjeta">
 
                 <div class="disco">
@@ -380,17 +373,17 @@
                     también cuentan historias.
                 </p>
 
-
-                <!-- REPRODUCTOR DE MÚSICA -->
+                <!-- MÚSICA -->
 
                 <audio
                     id="musica"
                     controls
                     preload="metadata"
+                    class="reproductor-musica"
                 >
 
                     <source
-                        src="cancion.mp3"
+                        src="canción.mp3"
                         type="audio/mpeg"
                     >
 
@@ -399,14 +392,12 @@
 
                 </audio>
 
-
                 <p class="mensaje-musica">
-                    🎧 Toca ▶️ para comenzar a escuchar
+                    🎧 Presiona ▶️ para comenzar a escuchar
                     nuestra canción. 💙
                 </p>
 
             </div>
-
 
             <button
                 class="btn-volver"
@@ -440,7 +431,6 @@
                 Y esta es la sorpresa... 💙
             </h2>
 
-
             <div class="sorpresa-tarjeta">
 
                 <div class="corazones">
@@ -463,7 +453,6 @@
 
             </div>
 
-
             <button
                 class="btn-volver"
                 onclick="mostrar('menu')"
@@ -485,8 +474,6 @@
         let claveIngresada = "";
 
 
-        /* CAMBIAR DE PANTALLA */
-
         function mostrar(id) {
 
             const pantallas =
@@ -498,10 +485,8 @@
 
             });
 
-
             const destino =
                 document.getElementById(id);
-
 
             if (destino) {
 
@@ -517,8 +502,6 @@
         }
 
 
-        /* INGRESAR NÚMERO */
-
         function numero(num) {
 
             if (claveIngresada.length < 4) {
@@ -532,8 +515,6 @@
         }
 
 
-        /* BORRAR */
-
         function borrar() {
 
             claveIngresada =
@@ -544,21 +525,13 @@
         }
 
 
-        /* MOSTRAR CLAVE */
-
         function actualizarDisplay() {
 
             let texto = "";
 
-            for (
-                let i = 0;
-                i < 4;
-                i++
-            ) {
+            for (let i = 0; i < 4; i++) {
 
-                if (
-                    i < claveIngresada.length
-                ) {
+                if (i < claveIngresada.length) {
 
                     texto += "●";
 
@@ -570,7 +543,6 @@
 
             }
 
-
             document.getElementById(
                 "display"
             ).textContent = texto;
@@ -578,12 +550,9 @@
         }
 
 
-        /* COMPROBAR CLAVE */
-
         function entrar() {
 
             const claveCorrecta = "1007";
-
 
             if (
                 claveIngresada === claveCorrecta
@@ -603,7 +572,6 @@
                     );
 
                 display.textContent = "💔";
-
 
                 setTimeout(function() {
 
