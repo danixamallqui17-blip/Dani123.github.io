@@ -5,18 +5,22 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #050b24, #101c4d, #050b24);
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #020b1c, #071d3d, #00142e);
     color: white;
     min-height: 100vh;
     overflow-x: hidden;
 }
 
+/* =========================
+   PANTALLAS
+========================= */
+
 .pantalla {
     display: none;
     min-height: 100vh;
     width: 100%;
-    padding: 30px 20px;
+    padding: 25px 15px;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -26,196 +30,158 @@ body {
     display: flex;
 }
 
-.contenido {
+/* =========================
+   PORTADA
+========================= */
+
+#inicio {
+    background:
+        radial-gradient(circle at center, rgba(255, 0, 0, 0.15), transparent 45%),
+        linear-gradient(135deg, #020817, #061a36, #020817);
+}
+
+.contenido-inicio {
     width: 100%;
-    max-width: 500px;
-    margin: auto;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-hotwheels {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffcf00;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px #ffcf00;
+}
+
+.foto-portada {
+    width: min(90vw, 420px);
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 4px solid #ffcf00;
+    box-shadow:
+        0 0 15px rgba(255, 207, 0, 0.7),
+        0 0 35px rgba(255, 0, 0, 0.3);
 }
 
 .fecha {
-    font-size: 15px;
-    letter-spacing: 4px;
-    margin-bottom: 25px;
-    color: #ffcc00;
+    color: #ffcf00;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-top: 5px;
 }
 
 h1 {
-    font-size: 42px;
-    margin-bottom: 15px;
+    font-size: clamp(30px, 8vw, 55px);
+    color: white;
+    text-shadow:
+        3px 3px 0 #e60012,
+        0 0 15px rgba(255, 0, 0, 0.6);
 }
 
 h2 {
-    font-size: 30px;
-    margin-bottom: 15px;
+    font-size: clamp(28px, 7vw, 45px);
+    color: #ffcf00;
+    margin-bottom: 20px;
 }
 
-.subtitulo {
-    font-size: 18px;
-    margin-bottom: 35px;
-    opacity: 0.9;
+p {
+    line-height: 1.7;
 }
+
+/* =========================
+   BOTONES
+========================= */
 
 button {
     border: none;
-    border-radius: 30px;
-    padding: 14px 28px;
-    font-size: 17px;
-    font-weight: bold;
     cursor: pointer;
-    background: #ffcc00;
-    color: #111;
-    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: inherit;
 }
 
-button:active {
-    transform: scale(0.95);
+.btn-principal {
+    background: linear-gradient(135deg, #ffcf00, #ff9900);
+    color: #07152d;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 5px 20px rgba(255, 207, 0, 0.4);
+    transition: 0.25s;
 }
 
-button:hover {
-    box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);
+.btn-principal:hover {
+    transform: scale(1.05);
+}
+
+.btn-volver {
+    margin-top: 25px;
+    background: transparent;
+    border: 2px solid #ffcf00;
+    color: #ffcf00;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.btn-volver:hover {
+    background: #ffcf00;
+    color: #07152d;
+}
+
+/* =========================
+   CONTRASEÑA
+========================= */
+
+#clave {
+    flex-direction: column;
+}
+
+.semaforo {
+    width: min(95%, 380px);
+    padding: 25px;
+    border-radius: 25px;
+    background: rgba(0, 18, 45, 0.9);
+    border: 2px solid #ffcf00;
+    box-shadow: 0 0 25px rgba(255, 207, 0, 0.2);
+}
+
+.semaforo h2 {
+    font-size: 28px;
 }
 
 #display {
-    margin: 25px auto;
-    font-size: 30px;
-    letter-spacing: 10px;
-    min-height: 40px;
+    background: #010714;
+    border: 2px solid #e60012;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    letter-spacing: 8px;
+    color: #ffcf00;
 }
 
 .teclado {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    max-width: 300px;
-    margin: auto;
+    gap: 10px;
 }
 
 .teclado button {
-    height: 60px;
-    padding: 0;
-    font-size: 21px;
-    background: rgba(255, 255, 255, 0.12);
-    color: white;
-    border: 1px solid rgba(255,255,255,0.2);
-}
-
-.teclado button:hover {
-    background: rgba(255, 204, 0, 0.25);
-}
-
-.pista {
-    margin-top: 25px;
-    font-size: 14px;
-    opacity: 0.7;
-}
-
-.regalos {
-    display: grid;
-    gap: 18px;
-    margin-top: 30px;
-}
-
-.regalo {
-    padding: 25px;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.18);
-    cursor: pointer;
-    transition: transform 0.3s, background 0.3s;
-}
-
-.regalo:hover {
-    transform: translateY(-5px);
-    background: rgba(255,204,0,0.15);
-}
-
-.icono {
-    font-size: 48px;
-    margin-bottom: 10px;
-}
-
-.regalo h3 {
-    font-size: 21px;
-    margin-bottom: 7px;
-}
-
-.regalo p {
-    opacity: 0.75;
-}
-
-.carta {
-    background: #fff8e7;
-    color: #252525;
-    padding: 30px 25px;
+    min-height: 60px;
     border-radius: 15px;
-    margin: 25px 0;
-    text-align: left;
-    line-height: 1.7;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-
-.carta p {
-    margin-bottom: 18px;
-}
-
-.firma {
-    text-align: right;
+    background: #0b2a52;
+    border: 2px solid #164c82;
+    color: white;
+    font-size: 22px;
     font-weight: bold;
+    transition: 0.2s;
 }
 
-.disco {
-    font-size: 100px;
-    margin: 30px 0;
-    animation: girar 3s linear infinite;
-}
-
-@keyframes girar {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.trofeo {
-    font-size: 90px;
-    margin-bottom: 20px;
-    animation: flotar 2s ease-in-out infinite;
-}
-
-@keyframes flotar {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-12px);
-    }
-}
-
-.mensaje-final {
-    font-size: 21px;
-    line-height: 1.6;
-    margin: 25px 0;
-}
-
-@media (max-width: 480px) {
-
-    h1 {
-        font-size: 34px;
-    }
-
-    h2 {
-        font-size: 26px;
-    }
-
-    .subtitulo {
-        font-size: 16px;
-    }
-
-    .pantalla {
-        padding: 25px 15px;
-    }
-      }
+.teclado button:hover
