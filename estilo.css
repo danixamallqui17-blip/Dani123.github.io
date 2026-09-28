@@ -1,0 +1,221 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #050b24, #101c4d, #050b24);
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.pantalla {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+    padding: 30px 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.pantalla.activa {
+    display: flex;
+}
+
+.contenido {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+}
+
+.fecha {
+    font-size: 15px;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+    color: #ffcc00;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.subtitulo {
+    font-size: 18px;
+    margin-bottom: 35px;
+    opacity: 0.9;
+}
+
+button {
+    border: none;
+    border-radius: 30px;
+    padding: 14px 28px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #ffcc00;
+    color: #111;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:hover {
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);
+}
+
+#display {
+    margin: 25px auto;
+    font-size: 30px;
+    letter-spacing: 10px;
+    min-height: 40px;
+}
+
+.teclado {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 300px;
+    margin: auto;
+}
+
+.teclado button {
+    height: 60px;
+    padding: 0;
+    font-size: 21px;
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.teclado button:hover {
+    background: rgba(255, 204, 0, 0.25);
+}
+
+.pista {
+    margin-top: 25px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.regalos {
+    display: grid;
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.regalo {
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.18);
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.regalo:hover {
+    transform: translateY(-5px);
+    background: rgba(255,204,0,0.15);
+}
+
+.icono {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.regalo h3 {
+    font-size: 21px;
+    margin-bottom: 7px;
+}
+
+.regalo p {
+    opacity: 0.75;
+}
+
+.carta {
+    background: #fff8e7;
+    color: #252525;
+    padding: 30px 25px;
+    border-radius: 15px;
+    margin: 25px 0;
+    text-align: left;
+    line-height: 1.7;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.carta p {
+    margin-bottom: 18px;
+}
+
+.firma {
+    text-align: right;
+    font-weight: bold;
+}
+
+.disco {
+    font-size: 100px;
+    margin: 30px 0;
+    animation: girar 3s linear infinite;
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.trofeo {
+    font-size: 90px;
+    margin-bottom: 20px;
+    animation: flotar 2s ease-in-out infinite;
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.mensaje-final {
+    font-size: 21px;
+    line-height: 1.6;
+    margin: 25px 0;
+}
+
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 34px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .subtitulo {
+        font-size: 16px;
+    }
+
+    .pantalla {
+        padding: 25px 15px;
+    }
+      }
