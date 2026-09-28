@@ -1,369 +1,382 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Un regalo para ti ❤️</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <link rel="stylesheet" href="estilo.css">
+    <title>
+        Un regalo para ti ❤️
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="estilo.css"
+    >
+
 </head>
+
 
 <body>
 
-    <!-- =========================
-         PORTADA
-    ========================== -->
 
-    <section id="inicio" class="pantalla activa">
+<!-- =====================================
+     PORTADA
+===================================== -->
 
-        <div class="contenido-inicio">
+<section
+    id="inicio"
+    class="pantalla activa"
+>
 
-            <div class="logo-hotwheels">
-                🔥 HOT WHEELS 🔥
-            </div>
+    <div class="contenido-inicio">
 
-            <!-- FOTO DE PORTADA -->
-            <img
-                src="portada.jpg"
-                alt="Nuestro recuerdo"
-                class="foto-portada"
+
+        <div class="decoracion-superior">
+            ✨ 🌸 ✨
+        </div>
+
+
+        <div class="logo-hotwheels">
+            🏎️ UNA HISTORIA PARA TI 🏎️
+        </div>
+
+
+        <img
+            src="portada.jpg"
+            alt="Nuestro recuerdo"
+            class="foto-portada"
+        >
+
+
+        <div class="fecha">
+            30 DE SEPTIEMBRE
+        </div>
+
+
+        <h1>
+            Un regalo para ti ❤️
+        </h1>
+
+
+        <p class="subtitulo">
+            Porque algunas historias están
+            destinadas a encontrarse...
+        </p>
+
+
+        <button
+            class="btn-principal"
+            onclick="mostrar('clave')"
+        >
+            Comenzar 💕
+        </button>
+
+
+        <div class="decoracion-inferior">
+            🌷 ✨ 💗 ✨ 🌷
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     CONTRASEÑA
+===================================== -->
+
+<section
+    id="clave"
+    class="pantalla"
+>
+
+    <div class="semaforo">
+
+
+        <div class="mini-decoracion">
+            💕 ✨ 💕
+        </div>
+
+
+        <h2>
+            Una pequeña sorpresa 🔐
+        </h2>
+
+
+        <p class="texto-clave">
+            Solo tú sabes la clave...
+        </p>
+
+
+        <div id="display">
+            ____
+        </div>
+
+
+        <div class="teclado">
+
+
+            <button onclick="numero('1')">
+                1
+            </button>
+
+            <button onclick="numero('2')">
+                2
+            </button>
+
+            <button onclick="numero('3')">
+                3
+            </button>
+
+
+            <button onclick="numero('4')">
+                4
+            </button>
+
+            <button onclick="numero('5')">
+                5
+            </button>
+
+            <button onclick="numero('6')">
+                6
+            </button>
+
+
+            <button onclick="numero('7')">
+                7
+            </button>
+
+            <button onclick="numero('8')">
+                8
+            </button>
+
+            <button onclick="numero('9')">
+                9
+            </button>
+
+
+            <button
+                class="borrar"
+                onclick="borrar()"
+            >
+                ⌫
+            </button>
+
+
+            <button onclick="numero('0')">
+                0
+            </button>
+
+
+            <button
+                class="entrar"
+                onclick="entrar()"
+            >
+                ❤️
+            </button>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     MENÚ
+===================================== -->
+
+<section
+    id="menu"
+    class="pantalla"
+>
+
+    <div class="menu-contenido">
+
+
+        <div class="decoracion-titulo">
+            🌸 ✨ 💕 ✨ 🌸
+        </div>
+
+
+        <h2>
+            Para ti, con amor ❤️
+        </h2>
+
+
+        <p class="texto-menu">
+            Cada pequeño detalle guarda una parte
+            de nuestra historia.
+        </p>
+
+
+
+        <div class="menu-opciones">
+
+
+            <!-- ==========================
+                 CARTA
+            =========================== -->
+
+            <button
+                class="opcion-menu"
+                onclick="mostrar('carta')"
             >
 
-            <p class="fecha">
-                30 DE SEPTIEMBRE
-            </p>
 
-            <h1>
-                Un regalo para ti ❤️
-            </h1>
-
-            <p class="subtitulo">
-                Preparé algo especial para ti...
-            </p>
-
-            <button onclick="mostrar('password')">
-                🏁 COMENZAR
-            </button>
-
-        </div>
-
-    </section>
+                <div class="icono-menu">
+                    💌
+                </div>
 
 
-    <!-- =========================
-         CONTRASEÑA
-    ========================== -->
+                <div class="contenido-opcion">
 
-    <section id="password" class="pantalla">
-
-        <div class="contenido">
-
-            <div class="semaforo">
-                🚦
-            </div>
-
-            <h2>
-                🔐 Una sorpresa te espera
-            </h2>
-
-            <p>
-                Ingresa la fecha especial ❤️
-            </p>
-
-            <div id="display">
-                ____
-            </div>
-
-            <div class="teclado">
-
-                <button onclick="numero(1)">1</button>
-                <button onclick="numero(2)">2</button>
-                <button onclick="numero(3)">3</button>
-
-                <button onclick="numero(4)">4</button>
-                <button onclick="numero(5)">5</button>
-                <button onclick="numero(6)">6</button>
-
-                <button onclick="numero(7)">7</button>
-                <button onclick="numero(8)">8</button>
-                <button onclick="numero(9)">9</button>
-
-                <button onclick="borrar()">⌫</button>
-                <button onclick="numero(0)">0</button>
-                <button onclick="entrar()">✓</button>
-
-            </div>
-
-            <p class="pista">
-                💡 Pista: una fecha especial
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         MENÚ DE REGALOS
-    ========================== -->
-
-    <section id="menu" class="pantalla">
-
-        <div class="contenido">
-
-            <div class="pista-carrera">
-                🏁 FINISH LINE 🏁
-            </div>
-
-            <h1>
-                🏎️ ¡Lo lograste! ❤️
-            </h1>
-
-            <p>
-                Ahora puedes descubrir cada parte
-                de tu regalo...
-            </p>
-
-            <div class="regalos">
-
-                <!-- CARTA -->
-
-                <div
-                    class="regalo"
-                    onclick="mostrar('carta')"
-                >
-
-                    <div class="icono">
-                        💌
-                    </div>
-
-                    <h3>
+                    <strong>
                         Una carta
-                    </h3>
+                    </strong>
 
-                    <p>
-                        Algo que quiero decirte
-                    </p>
+                    <span>
+                        Algo que quiero decirte...
+                    </span>
 
                 </div>
 
 
-                <!-- CANCIÓN -->
+                <div class="flecha">
+                    ♡
+                </div>
 
-                <div
-                    class="regalo"
-                    onclick="mostrar('cancion')"
-                >
 
-                    <div class="icono">
-                        🎵
-                    </div>
+            </button>
 
-                    <h3>
+
+
+            <!-- ==========================
+                 CANCIÓN
+            =========================== -->
+
+            <button
+                class="opcion-menu"
+                onclick="mostrar('cancion')"
+            >
+
+
+                <div class="icono-menu">
+                    🎵
+                </div>
+
+
+                <div class="contenido-opcion">
+
+                    <strong>
                         Nuestra canción
-                    </h3>
+                    </strong>
 
-                    <p>
-                        Una canción para nosotros
-                    </p>
+                    <span>
+                        Una canción para nosotros...
+                    </span>
 
                 </div>
 
 
-                <!-- SORPRESA -->
+                <div class="flecha">
+                    ♡
+                </div>
 
-                <div
-                    class="regalo"
-                    onclick="mostrar('mensaje')"
-                >
 
-                    <div class="icono">
-                        🏆
-                    </div>
+            </button>
 
-                    <h3>
+
+
+            <!-- ==========================
+                 SORPRESA
+            =========================== -->
+
+            <button
+                class="opcion-menu"
+                onclick="mostrar('sorpresa')"
+            >
+
+
+                <div class="icono-menu">
+                    🏆
+                </div>
+
+
+                <div class="contenido-opcion">
+
+                    <strong>
                         Una sorpresa
-                    </h3>
+                    </strong>
 
-                    <p>
-                        Para terminar este recorrido
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         CARTA
-    ========================== -->
-
-    <section id="carta" class="pantalla">
-
-        <div class="contenido">
-
-            <div class="sobre">
-                💌
-            </div>
-
-            <h1>
-                Para ti ❤️
-            </h1>
-
-            <div class="carta">
-
-                <p>
-                    Así como cada camino tiene un destino,
-                    yo tuve la suerte de encontrar el mío:
-                    <strong>CONTIGO.</strong>
-                </p>
-
-                <p>
-                    Que nunca nos falten aventuras, risas
-                    y momentos para recordar.
-                </p>
-
-                <p>
-                    Porque tú, mi motor, haces que mi vida
-                    sea una gran carrera llena de emoción.
-                </p>
-
-                <p>
-                    Con todo mi amor, para el hombre que hace
-                    que mi corazón vaya a toda velocidad.
-                </p>
-
-                <div class="frase-final">
-
-                    “ERES LA CHISPA QUE ENCIENDE MI CORAZÓN
-                    Y ME LLEVA A TODA VELOCIDAD HACIA TI”
+                    <span>
+                        Para terminar este recorrido...
+                    </span>
 
                 </div>
 
-                <div class="firma">
-                    ❤️ Con todo mi amor
+
+                <div class="flecha">
+                    ♡
                 </div>
 
-            </div>
 
-            <button onclick="mostrar('menu')">
-                ← Volver
             </button>
 
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         CANCIÓN
-    ========================== -->
-
-    <section id="cancion" class="pantalla">
-
-        <div class="contenido">
-
-            <div class="disco">
-                💿
-            </div>
-
-            <h1>
-                🎵 Nuestra canción
-            </h1>
-
-            <p class="texto-cancion">
-
-                Porque hay canciones que simplemente
-                nos hacen pensar en alguien especial ❤️
-
-            </p>
-
-            <div class="video-musica">
-
-                <iframe
-                    width="100%"
-                    height="220"
-                    src="https://www.youtube.com/embed/8qPG-f8ECNM"
-                    title="Nuestra canción"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
-
-            </div>
-
-            <p class="nota-musica">
-                ❤️ Esta canción es para ti ❤️
-            </p>
-
-            <button onclick="mostrar('menu')">
-                ← Volver
-            </button>
 
         </div>
 
-    </section>
 
 
-    <!-- =========================
-         SORPRESA FINAL
-    ========================== -->
+        <div class="frase-menu">
 
-    <section id="mensaje" class="pantalla">
+            ✨ Porque algunas historias están
+            destinadas a encontrarse... ✨
 
-        <div class="contenido">
+        </div>
 
-            <div class="trofeo">
-                🏆
-            </div>
 
-            <h1>
-                🏁 Llegaste al final ❤️
-            </h1>
+    </div>
 
-            <p class="mensaje-final">
+</section>
 
-                Si pudiera elegir nuevamente mi camino,
-                volvería a elegirte a ti.
 
-            </p>
 
-            <p class="mensaje-final">
+<!-- =====================================
+     CARTA
+===================================== -->
 
-                Porque entre tantos caminos,
-                carreras y destinos...
+<section
+    id="carta"
+    class="pantalla"
+>
 
-            </p>
+    <div class="carta-contenido">
 
-            <h2>
-                ❤️ Mi destino eres tú ❤️
-            </h2>
 
-            <div class="autos">
-                🏎️💨 ❤️ 💨🏎️
-            </div>
+        <div class="sobre-decoracion">
+            💌
+        </div>
+
+
+        <h2>
+            Para ti ❤️
+        </h2>
+
+
+        <div class="carta">
+
 
             <p>
-                Te amo mucho, mucho. ❤️
-            </p>
 
-            <button onclick="mostrar('menu')">
-                ← Volver al menú
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- JAVASCRIPT -->
-
-    <script src="script.js"></script>
-
-</body>
-</html>
+               
