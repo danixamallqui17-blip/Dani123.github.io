@@ -2,91 +2,62 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Un regalo para ti ❤️</title>
 
-    <link
-        rel="stylesheet"
-        href="estilo.css"
-    >
-
+    <link rel="stylesheet" href="estilo.css">
 </head>
-
 
 <body>
 
+    <!-- ==============================
+         INICIO
+    =============================== -->
 
-    <!-- ==================================================
-         PORTADA
-    =================================================== -->
+    <section id="inicio" class="pantalla activa">
 
-    <section
-        id="inicio"
-        class="pantalla activa"
-    >
-
-        <div class="contenido">
+        <div class="contenido-inicio">
 
             <div class="decoracion">
                 ✨ 🏎️ ✨
             </div>
 
-
             <div class="separador">
                 ───────── ♡ ─────────
             </div>
 
-
-            <div class="titulo-pequeno">
+            <h3 class="titulo-historia">
                 🏎️ UNA HISTORIA PARA TI 🏎️
-            </div>
-
+            </h3>
 
             <div class="foto-contenedor">
-
-                <img
-                    src="portada.jpg"
-                    alt="Nuestro recuerdo"
-                >
-
+                <img src="portada.jpg" alt="Nuestro recuerdo">
             </div>
-
 
             <div class="fecha">
                 30 DE SEPTIEMBRE
             </div>
 
-
             <h1>
                 Un regalo para ti ❤️
             </h1>
 
-
             <p class="subtitulo">
-                Porque algunas historias están
-                destinadas a encontrarse...
+                Porque algunas historias están destinadas a encontrarse...
             </p>
 
-
             <button
+                type="button"
                 class="btn-principal"
-                onclick="mostrar('clave')"
-            >
+                onclick="mostrar('clave')">
                 Comenzar 💙
             </button>
-
 
             <div class="separador">
                 ───────── ♡ ─────────
             </div>
-
 
             <div class="decoracion">
                 ✨ 💙 ✨ 💙 ✨
@@ -97,111 +68,72 @@
     </section>
 
 
-
-    <!-- ==================================================
+    <!-- ==============================
          CONTRASEÑA
-    =================================================== -->
+    =============================== -->
 
-    <section
-        id="clave"
-        class="pantalla"
-    >
+    <section id="clave" class="pantalla">
 
-        <div class="contenido">
+        <div class="contenido-clave">
 
             <div class="decoracion">
                 💙 ✨ 💙
             </div>
 
-
             <div class="separador">
                 ─────── ♡ ───────
             </div>
-
 
             <h2>
                 Una pequeña sorpresa 🔐
             </h2>
 
-
-            <p class="texto">
+            <p class="texto-clave">
                 Solo tú sabes la clave...
             </p>
-
 
             <div id="display">
                 ____
             </div>
 
-
             <div class="teclado">
 
-                <button onclick="numero('1')">
-                    1
-                </button>
+                <button type="button" onclick="numero('1')">1</button>
+                <button type="button" onclick="numero('2')">2</button>
+                <button type="button" onclick="numero('3')">3</button>
 
-                <button onclick="numero('2')">
-                    2
-                </button>
+                <button type="button" onclick="numero('4')">4</button>
+                <button type="button" onclick="numero('5')">5</button>
+                <button type="button" onclick="numero('6')">6</button>
 
-                <button onclick="numero('3')">
-                    3
-                </button>
-
-
-                <button onclick="numero('4')">
-                    4
-                </button>
-
-                <button onclick="numero('5')">
-                    5
-                </button>
-
-                <button onclick="numero('6')">
-                    6
-                </button>
-
-
-                <button onclick="numero('7')">
-                    7
-                </button>
-
-                <button onclick="numero('8')">
-                    8
-                </button>
-
-                <button onclick="numero('9')">
-                    9
-                </button>
-
+                <button type="button" onclick="numero('7')">7</button>
+                <button type="button" onclick="numero('8')">8</button>
+                <button type="button" onclick="numero('9')">9</button>
 
                 <button
+                    type="button"
                     class="borrar"
-                    onclick="borrar()"
-                >
+                    onclick="borrar()">
                     ⌫
                 </button>
 
-
-                <button onclick="numero('0')">
+                <button type="button" onclick="numero('0')">
                     0
                 </button>
 
-
                 <button
+                    type="button"
                     class="entrar"
-                    onclick="entrar()"
-                >
+                    onclick="entrar()">
                     💙
                 </button>
 
             </div>
 
-
             <button
+                type="button"
                 class="btn-volver"
-                onclick="mostrar('inicio')"
-            >
+                onclick="mostrar('inicio')">
                 ← Volver
             </button>
 
@@ -210,66 +142,45 @@
     </section>
 
 
-
-    <!-- ==================================================
+    <!-- ==============================
          MENÚ
-    =================================================== -->
+    =============================== -->
 
-    <section
-        id="menu"
-        class="pantalla"
-    >
+    <section id="menu" class="pantalla">
 
-        <div class="contenido">
+        <div class="contenido-menu">
 
             <div class="decoracion">
                 ✨ 💙 🏎️ 💙 ✨
             </div>
 
-
             <div class="separador">
                 ───────── ♡ ─────────
             </div>
-
 
             <h2>
                 Para ti, con amor 💙
             </h2>
 
-
-            <p class="texto">
-                Cada pequeño detalle guarda una parte
-                de nuestra historia.
+            <p class="texto-menu">
+                Cada pequeño detalle guarda una parte de nuestra historia.
             </p>
-
 
             <div class="menu-opciones">
 
-
-                <!-- CARTA -->
-
                 <button
+                    type="button"
                     class="opcion-menu"
-                    onclick="mostrar('carta')"
-                >
+                    onclick="mostrar('carta')">
 
                     <div class="icono-menu">
                         💌
                     </div>
 
-
                     <div class="contenido-opcion">
-
-                        <strong>
-                            Una carta
-                        </strong>
-
-                        <span>
-                            Algo que quiero decirte...
-                        </span>
-
+                        <strong>Una carta</strong>
+                        <span>Algo que quiero decirte...</span>
                     </div>
-
 
                     <div class="flecha">
                         ♡
@@ -278,31 +189,19 @@
                 </button>
 
 
-
-                <!-- CANCIÓN -->
-
                 <button
+                    type="button"
                     class="opcion-menu"
-                    onclick="mostrar('cancion')"
-                >
+                    onclick="mostrar('cancion')">
 
                     <div class="icono-menu">
                         🎵
                     </div>
 
-
                     <div class="contenido-opcion">
-
-                        <strong>
-                            Nuestra canción
-                        </strong>
-
-                        <span>
-                            Una canción para nosotros...
-                        </span>
-
+                        <strong>Nuestra canción</strong>
+                        <span>Una canción para nosotros...</span>
                     </div>
-
 
                     <div class="flecha">
                         ♡
@@ -311,31 +210,19 @@
                 </button>
 
 
-
-                <!-- SORPRESA -->
-
                 <button
+                    type="button"
                     class="opcion-menu"
-                    onclick="mostrar('sorpresa')"
-                >
+                    onclick="mostrar('sorpresa')">
 
                     <div class="icono-menu">
                         🏆
                     </div>
 
-
                     <div class="contenido-opcion">
-
-                        <strong>
-                            Una sorpresa
-                        </strong>
-
-                        <span>
-                            Para terminar este recorrido...
-                        </span>
-
+                        <strong>Una sorpresa</strong>
+                        <span>Para terminar este recorrido...</span>
                     </div>
-
 
                     <div class="flecha">
                         ♡
@@ -345,90 +232,61 @@
 
             </div>
 
-
-            <div class="frase-menu">
-
-                ✨ Porque algunas historias están
-                destinadas a encontrarse... ✨
-
-            </div>
-
         </div>
 
     </section>
 
 
-
-    <!-- ==================================================
+    <!-- ==============================
          CARTA
-    =================================================== -->
+    =============================== -->
 
-    <section
-        id="carta"
-        class="pantalla"
-    >
+    <section id="carta" class="pantalla">
 
-        <div class="contenido">
+        <div class="contenido-carta">
 
             <div class="icono-grande">
                 💌
             </div>
 
-
             <div class="separador">
                 ─────── ♡ ───────
             </div>
-
 
             <h2>
                 Para ti ❤️
             </h2>
 
-
             <div class="carta">
 
-
                 <p>
-
                     Así como cada camino tiene un destino,
                     yo tuve la suerte de encontrar el mío
                     <strong>CONTIGO</strong>.
-
                 </p>
 
-
                 <p>
-
                     Que nunca nos falten aventuras,
                     risas y momentos para recordar.
-
                 </p>
-
 
                 <p>
-
                     Porque tú, mi motor, haces que mi vida
                     sea una gran carrera llena de emoción.
-
                 </p>
 
-
                 <p class="firma">
-
                     Con todo mi amor,<br>
-
                     para el hombre que hace que mi corazón
                     vaya a toda velocidad. ❤️
-
                 </p>
 
             </div>
 
-
             <button
+                type="button"
                 class="btn-volver"
-                onclick="mostrar('menu')"
-            >
+                onclick="mostrar('menu')">
                 ← Volver al menú
             </button>
 
@@ -437,105 +295,66 @@
     </section>
 
 
+    <!-- ==============================
+         CANCIÓN DE YOUTUBE
+    =============================== -->
 
-    <!-- ==================================================
-         CANCIÓN
-    =================================================== -->
+    <section id="cancion" class="pantalla">
 
-    <section
-        id="cancion"
-        class="pantalla"
-    >
-
-        <div class="contenido">
+        <div class="contenido-cancion">
 
             <div class="icono-grande">
                 🎵
             </div>
 
-
             <div class="separador">
                 ─────── ♡ ───────
             </div>
-
 
             <h2>
                 Nuestra canción 💙
             </h2>
 
-
-            <p class="texto">
-
+            <p class="texto-cancion">
                 Hay canciones que simplemente
                 nos hacen recordar a alguien especial.
-
             </p>
 
-
             <div class="cancion-tarjeta">
-
 
                 <div class="disco">
                     🎶
                 </div>
 
-
                 <h3>
                     Una canción para nosotros
                 </h3>
 
-
                 <p>
-
-                    Porque algunas melodías
-                    también cuentan historias.
-
+                    Porque algunas melodías también cuentan historias.
                 </p>
-
-
-                <!-- =====================================
-                     VIDEO DE YOUTUBE
-                ====================================== -->
 
                 <div class="youtube">
 
                     <iframe
-
                         src="https://www.youtube.com/embed/8qPG-f8ECNM"
-
                         title="Nuestra canción"
-
-                        allow="
-                            accelerometer;
-                            autoplay;
-                            clipboard-write;
-                            encrypted-media;
-                            gyroscope;
-                            picture-in-picture;
-                            web-share
-                        "
-
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen>
-
                     </iframe>
 
                 </div>
 
-
                 <p class="mensaje-musica">
-
-                    🎧 Presiona ▶️ para comenzar
-                    a escuchar nuestra canción. 💙
-
+                    🎧 Presiona ▶️ para comenzar a escuchar. 💙
                 </p>
 
             </div>
 
-
             <button
+                type="button"
                 class="btn-volver"
-                onclick="mostrar('menu')"
-            >
+                onclick="mostrar('menu')">
                 ← Volver al menú
             </button>
 
@@ -544,51 +363,38 @@
     </section>
 
 
-
-    <!-- ==================================================
+    <!-- ==============================
          SORPRESA
-    =================================================== -->
+    =============================== -->
 
-    <section
-        id="sorpresa"
-        class="pantalla"
-    >
+    <section id="sorpresa" class="pantalla">
 
-        <div class="contenido">
+        <div class="contenido-sorpresa">
 
             <div class="icono-grande">
                 🏆
             </div>
 
-
             <div class="separador">
                 ─────── ♡ ───────
             </div>
-
 
             <h2>
                 Y esta es la sorpresa... 💙
             </h2>
 
-
-            <!-- =====================================
-                 IMAGEN DEL HILO ROJO
-            ====================================== -->
-
             <div class="sorpresa-imagen">
 
                 <img
                     src="sorpresa.jpg"
-                    alt="El hilo rojo del destino"
-                >
+                    alt="El hilo rojo del destino">
 
             </div>
 
-
             <button
+                type="button"
                 class="btn-volver"
-                onclick="mostrar('menu')"
-            >
+                onclick="mostrar('menu')">
                 ← Volver al menú
             </button>
 
@@ -597,64 +403,39 @@
     </section>
 
 
-
-    <!-- ==================================================
+    <!-- ==============================
          JAVASCRIPT
-         TODO EL FUNCIONAMIENTO ESTÁ AQUÍ
-    =================================================== -->
+    =============================== -->
 
     <script>
-
-        /* ==========================================
-           VARIABLE DE CONTRASEÑA
-        ========================================== */
 
         let claveIngresada = "";
 
         const claveCorrecta = "1007";
 
 
-
-        /* ==========================================
-           CAMBIAR DE PANTALLA
-        ========================================== */
-
         function mostrar(id) {
 
             const pantallas =
                 document.querySelectorAll(".pantalla");
 
-
             pantallas.forEach(function(pantalla) {
-
                 pantalla.classList.remove("activa");
-
             });
-
 
             const destino =
                 document.getElementById(id);
 
-
             if (destino) {
-
                 destino.classList.add("activa");
 
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
             }
-
-
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-
         }
 
-
-
-        /* ==========================================
-           AGREGAR NÚMERO
-        ========================================== */
 
         function numero(num) {
 
@@ -663,16 +444,9 @@
                 claveIngresada += num;
 
                 actualizarDisplay();
-
             }
-
         }
 
-
-
-        /* ==========================================
-           BORRAR NÚMERO
-        ========================================== */
 
         function borrar() {
 
@@ -680,64 +454,30 @@
                 claveIngresada.slice(0, -1);
 
             actualizarDisplay();
-
         }
 
-
-
-        /* ==========================================
-           ACTUALIZAR PANTALLA DE CONTRASEÑA
-        ========================================== */
 
         function actualizarDisplay() {
 
             let texto = "";
 
+            for (let i = 0; i < 4; i++) {
 
-            for (
-                let i = 0;
-                i < 4;
-                i++
-            ) {
-
-                if (
-                    i < claveIngresada.length
-                ) {
-
+                if (i < claveIngresada.length) {
                     texto += "●";
-
                 } else {
-
                     texto += "_";
-
                 }
 
             }
 
-
-            const display =
-                document.getElementById("display");
-
-
-            if (display) {
-
-                display.textContent = texto;
-
-            }
-
+            document.getElementById("display").textContent = texto;
         }
 
 
-
-        /* ==========================================
-           COMPROBAR CONTRASEÑA
-        ========================================== */
-
         function entrar() {
 
-            if (
-                claveIngresada === claveCorrecta
-            ) {
+            if (claveIngresada === claveCorrecta) {
 
                 claveIngresada = "";
 
@@ -745,16 +485,9 @@
 
                 mostrar("menu");
 
-            }
+            } else {
 
-            else {
-
-                const display =
-                    document.getElementById("display");
-
-
-                display.textContent = "💔";
-
+                document.getElementById("display").textContent = "💔";
 
                 setTimeout(function() {
 
@@ -763,28 +496,18 @@
                     actualizarDisplay();
 
                 }, 1000);
-
             }
-
         }
 
-
-
-        /* ==========================================
-           INICIAR
-        ========================================== */
 
         document.addEventListener(
             "DOMContentLoaded",
             function() {
-
                 actualizarDisplay();
-
             }
         );
 
     </script>
-
 
 </body>
 
