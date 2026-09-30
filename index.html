@@ -373,24 +373,22 @@
                     también cuentan historias.
                 </p>
 
-                <!-- MÚSICA -->
 
-                <audio
-                    id="musica"
-                    controls
-                    preload="metadata"
-                    class="reproductor-musica"
-                >
+                <!-- =========================
+                     REPRODUCTOR DE YOUTUBE
+                ========================== -->
 
-                    <source
-                        src="cancion.mp3"
-                        type="audio/mpeg"
-                    >
+                <div class="reproductor-youtube">
 
-                    Tu navegador no puede reproducir
-                    este archivo de audio.
+                    <iframe
+                        src="https://www.youtube.com/embed/8qPG-f8ECNM"
+                        title="Nuestra canción"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
 
-                </audio>
+                </div>
 
                 <p class="mensaje-musica">
                     🎧 Presiona ▶️ para comenzar a escuchar
@@ -431,27 +429,20 @@
                 Y esta es la sorpresa... 💙
             </h2>
 
-            <div class="sorpresa-tarjeta">
 
-                <div class="corazones">
-                    ✨ 💙 ✨
-                </div>
+            <!-- =========================
+                 IMAGEN DE LA SORPRESA
+            ========================== -->
 
-                <h3>
-                    ERES LA CHISPA QUE ENCIENDE
-                    MI CORAZÓN
-                </h3>
+            <div class="sorpresa-imagen">
 
-                <p class="frase-final">
-                    Y ME LLEVA A TODA VELOCIDAD
-                    HACIA TI. 🏎️💙
-                </p>
-
-                <div class="corazones">
-                    ✨ 💙 ✨
-                </div>
+                <img
+                    src="sorpresa.jpg"
+                    alt="Una sorpresa para ti"
+                >
 
             </div>
+
 
             <button
                 class="btn-volver"
@@ -481,112 +472,4 @@
 
             pantallas.forEach(function(pantalla) {
 
-                pantalla.classList.remove("activa");
-
-            });
-
-            const destino =
-                document.getElementById(id);
-
-            if (destino) {
-
-                destino.classList.add("activa");
-
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-
-            }
-
-        }
-
-
-        function numero(num) {
-
-            if (claveIngresada.length < 4) {
-
-                claveIngresada += num;
-
-                actualizarDisplay();
-
-            }
-
-        }
-
-
-        function borrar() {
-
-            claveIngresada =
-                claveIngresada.slice(0, -1);
-
-            actualizarDisplay();
-
-        }
-
-
-        function actualizarDisplay() {
-
-            let texto = "";
-
-            for (let i = 0; i < 4; i++) {
-
-                if (i < claveIngresada.length) {
-
-                    texto += "●";
-
-                } else {
-
-                    texto += "_";
-
-                }
-
-            }
-
-            document.getElementById(
-                "display"
-            ).textContent = texto;
-
-        }
-
-
-        function entrar() {
-
-            const claveCorrecta = "1007";
-
-            if (
-                claveIngresada === claveCorrecta
-            ) {
-
-                mostrar("menu");
-
-                claveIngresada = "";
-
-                actualizarDisplay();
-
-            } else {
-
-                const display =
-                    document.getElementById(
-                        "display"
-                    );
-
-                display.textContent = "💔";
-
-                setTimeout(function() {
-
-                    claveIngresada = "";
-
-                    actualizarDisplay();
-
-                }, 1000);
-
-            }
-
-        }
-
-    </script>
-
-</body>
-
-</html>
+                pantalla.classList.remove("activa
