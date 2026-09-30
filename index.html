@@ -8,6 +8,8 @@
     <title>Un regalo para ti ❤️</title>
 
     <link rel="stylesheet" href="estilo.css">
+
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -18,9 +20,9 @@
 
     <section id="inicio" class="pantalla activa">
 
-        <div class="contenido-inicio">
+        <div class="contenido">
 
-            <div class="decoracion-superior">
+            <div class="decoracion">
                 ✨ 🏎️ ✨
             </div>
 
@@ -28,7 +30,7 @@
                 ───────── ♡ ─────────
             </div>
 
-            <div class="logo-hotwheels">
+            <div class="titulo-pequeno">
                 🏎️ UNA HISTORIA PARA TI 🏎️
             </div>
 
@@ -36,7 +38,6 @@
                 <img
                     src="portada.jpg"
                     alt="Nuestro recuerdo"
-                    class="foto-portada"
                 >
             </div>
 
@@ -54,8 +55,8 @@
             </p>
 
             <button
+                id="btnComenzar"
                 class="btn-principal"
-                onclick="mostrar('clave')"
             >
                 Comenzar 💙
             </button>
@@ -64,7 +65,7 @@
                 ───────── ♡ ─────────
             </div>
 
-            <div class="decoracion-inferior">
+            <div class="decoracion">
                 ✨ 💙 ✨ 💙 ✨
             </div>
 
@@ -79,9 +80,9 @@
 
     <section id="clave" class="pantalla">
 
-        <div class="semaforo">
+        <div class="contenido">
 
-            <div class="mini-decoracion">
+            <div class="decoracion">
                 💙 ✨ 💙
             </div>
 
@@ -93,7 +94,7 @@
                 Una pequeña sorpresa 🔐
             </h2>
 
-            <p class="texto-clave">
+            <p class="texto">
                 Solo tú sabes la clave...
             </p>
 
@@ -103,33 +104,27 @@
 
             <div class="teclado">
 
-                <button onclick="numero('1')">1</button>
-                <button onclick="numero('2')">2</button>
-                <button onclick="numero('3')">3</button>
+                <button data-numero="1">1</button>
+                <button data-numero="2">2</button>
+                <button data-numero="3">3</button>
 
-                <button onclick="numero('4')">4</button>
-                <button onclick="numero('5')">5</button>
-                <button onclick="numero('6')">6</button>
+                <button data-numero="4">4</button>
+                <button data-numero="5">5</button>
+                <button data-numero="6">6</button>
 
-                <button onclick="numero('7')">7</button>
-                <button onclick="numero('8')">8</button>
-                <button onclick="numero('9')">9</button>
+                <button data-numero="7">7</button>
+                <button data-numero="8">8</button>
+                <button data-numero="9">9</button>
 
-                <button
-                    class="borrar"
-                    onclick="borrar()"
-                >
+                <button id="btnBorrar" class="borrar">
                     ⌫
                 </button>
 
-                <button onclick="numero('0')">
+                <button data-numero="0">
                     0
                 </button>
 
-                <button
-                    class="entrar"
-                    onclick="entrar()"
-                >
+                <button id="btnEntrar" class="entrar">
                     💙
                 </button>
 
@@ -137,7 +132,7 @@
 
             <button
                 class="btn-volver"
-                onclick="mostrar('inicio')"
+                data-ir="inicio"
             >
                 ← Volver
             </button>
@@ -153,9 +148,9 @@
 
     <section id="menu" class="pantalla">
 
-        <div class="menu-contenido">
+        <div class="contenido">
 
-            <div class="decoracion-titulo">
+            <div class="decoracion">
                 ✨ 💙 🏎️ 💙 ✨
             </div>
 
@@ -167,10 +162,11 @@
                 Para ti, con amor 💙
             </h2>
 
-            <p class="texto-menu">
+            <p class="texto">
                 Cada pequeño detalle guarda una parte
                 de nuestra historia.
             </p>
+
 
             <div class="menu-opciones">
 
@@ -178,7 +174,7 @@
 
                 <button
                     class="opcion-menu"
-                    onclick="mostrar('carta')"
+                    data-ir="carta"
                 >
 
                     <div class="icono-menu">
@@ -208,7 +204,7 @@
 
                 <button
                     class="opcion-menu"
-                    onclick="mostrar('cancion')"
+                    data-ir="cancion"
                 >
 
                     <div class="icono-menu">
@@ -238,7 +234,7 @@
 
                 <button
                     class="opcion-menu"
-                    onclick="mostrar('sorpresa')"
+                    data-ir="sorpresa"
                 >
 
                     <div class="icono-menu">
@@ -265,6 +261,7 @@
 
             </div>
 
+
             <div class="frase-menu">
                 ✨ Porque algunas historias están
                 destinadas a encontrarse... ✨
@@ -281,9 +278,9 @@
 
     <section id="carta" class="pantalla">
 
-        <div class="carta-contenido">
+        <div class="contenido">
 
-            <div class="sobre-decoracion">
+            <div class="icono-grande">
                 💌
             </div>
 
@@ -323,7 +320,7 @@
 
             <button
                 class="btn-volver"
-                onclick="mostrar('menu')"
+                data-ir="menu"
             >
                 ← Volver al menú
             </button>
@@ -339,7 +336,7 @@
 
     <section id="cancion" class="pantalla">
 
-        <div class="cancion-contenido">
+        <div class="contenido">
 
             <div class="icono-grande">
                 🎵
@@ -353,7 +350,7 @@
                 Nuestra canción 💙
             </h2>
 
-            <p class="texto-cancion-intro">
+            <p class="texto">
                 Hay canciones que simplemente
                 nos hacen recordar a alguien especial.
             </p>
@@ -375,15 +372,14 @@
 
 
                 <!-- =========================
-                     REPRODUCTOR DE YOUTUBE
+                     YOUTUBE
                 ========================== -->
 
-                <div class="reproductor-youtube">
+                <div class="youtube">
 
                     <iframe
                         src="https://www.youtube.com/embed/8qPG-f8ECNM"
                         title="Nuestra canción"
-                        frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen>
                     </iframe>
@@ -391,7 +387,7 @@
                 </div>
 
                 <p class="mensaje-musica">
-                    🎧 Presiona ▶️ para comenzar a escuchar
+                    🎧 Presiona ▶️ para escuchar
                     nuestra canción. 💙
                 </p>
 
@@ -399,7 +395,7 @@
 
             <button
                 class="btn-volver"
-                onclick="mostrar('menu')"
+                data-ir="menu"
             >
                 ← Volver al menú
             </button>
@@ -415,7 +411,7 @@
 
     <section id="sorpresa" class="pantalla">
 
-        <div class="sorpresa-contenido">
+        <div class="contenido">
 
             <div class="icono-grande">
                 🏆
@@ -430,15 +426,13 @@
             </h2>
 
 
-            <!-- =========================
-                 IMAGEN DE LA SORPRESA
-            ========================== -->
+            <!-- IMAGEN DEL HILO ROJO -->
 
             <div class="sorpresa-imagen">
 
                 <img
                     src="sorpresa.jpg"
-                    alt="Una sorpresa para ti"
+                    alt="El hilo rojo del destino"
                 >
 
             </div>
@@ -446,7 +440,7 @@
 
             <button
                 class="btn-volver"
-                onclick="mostrar('menu')"
+                data-ir="menu"
             >
                 ← Volver al menú
             </button>
@@ -455,21 +449,6 @@
 
     </section>
 
+</body>
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
-
-    <script>
-
-        let claveIngresada = "";
-
-
-        function mostrar(id) {
-
-            const pantallas =
-                document.querySelectorAll(".pantalla");
-
-            pantallas.forEach(function(pantalla) {
-
-                pantalla.classList.remove("activa
+</html>
