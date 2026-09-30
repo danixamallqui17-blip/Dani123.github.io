@@ -7,20 +7,495 @@
 
     <title>Un regalo para ti ❤️</title>
 
-    <link rel="stylesheet" href="estilo.css">
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(180deg, #eaf6ff, #d8edff);
+            color: #185b87;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           PANTALLAS
+        ========================== */
+
+        .pantalla {
+            display: none;
+            min-height: 100vh;
+            width: 100%;
+            padding: 35px 18px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pantalla.activa {
+            display: flex;
+        }
+
+        /* =========================
+           CONTENEDORES
+        ========================== */
+
+        .contenido-inicio,
+        .semaforo,
+        .menu-contenido,
+        .carta-contenido,
+        .cancion-contenido,
+        .sorpresa-contenido {
+            width: 100%;
+            max-width: 650px;
+            text-align: center;
+        }
+
+        /* =========================
+           DECORACIÓN
+        ========================== */
+
+        .decoracion-superior,
+        .decoracion-inferior,
+        .decoracion-titulo,
+        .mini-decoracion {
+            font-size: 28px;
+            margin: 10px 0;
+        }
+
+        .separador {
+            color: #268ac5;
+            font-size: 18px;
+            margin: 20px 0;
+            letter-spacing: 2px;
+        }
+
+        /* =========================
+           PORTADA
+        ========================== */
+
+        .logo-hotwheels {
+            font-size: 24px;
+            font-weight: bold;
+            color: #17699b;
+            margin: 15px 0;
+        }
+
+        .foto-contenedor {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 10px;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 10px 30px rgba(0, 75, 130, 0.18);
+        }
+
+        .foto-portada {
+            display: block;
+            width: 100%;
+            max-height: 600px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .fecha {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 22px;
+            border-radius: 30px;
+            background: #e0f2ff;
+            color: #17699b;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: 42px;
+            color: #17699b;
+            margin: 25px 0 12px;
+        }
+
+        h2 {
+            font-size: 32px;
+            color: #17699b;
+            margin: 18px 0;
+        }
+
+        h3 {
+            color: #17699b;
+            margin: 15px 0;
+            font-size: 22px;
+        }
+
+        .subtitulo,
+        .texto-menu,
+        .texto-cancion-intro,
+        .texto-clave {
+            color: #617b8d;
+            font-size: 18px;
+            line-height: 1.7;
+            margin: 10px auto;
+            max-width: 520px;
+        }
+
+        /* =========================
+           BOTONES
+        ========================== */
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-principal {
+            display: block;
+            width: 85%;
+            max-width: 310px;
+            margin: 30px auto;
+            padding: 17px 25px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #238bd0, #1769a2);
+            color: white;
+            font-size: 21px;
+            font-weight: bold;
+            box-shadow: 0 10px 22px rgba(24, 105, 162, 0.28);
+            transition: 0.2s;
+        }
+
+        .btn-principal:active {
+            transform: scale(0.96);
+        }
+
+        .btn-volver {
+            margin-top: 25px;
+            padding: 12px 22px;
+            border-radius: 30px;
+            background: white;
+            color: #17699b;
+            font-size: 16px;
+            box-shadow: 0 5px 15px rgba(0, 70, 120, 0.12);
+        }
+
+        /* =========================
+           CONTRASEÑA
+        ========================== */
+
+        .semaforo {
+            background: rgba(255,255,255,0.82);
+            padding: 30px 20px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,70,120,0.12);
+        }
+
+        #display {
+            width: 220px;
+            margin: 25px auto;
+            padding: 15px;
+            background: #edf8ff;
+            border-radius: 18px;
+            color: #17699b;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 8px;
+        }
+
+        .teclado {
+            width: 270px;
+            max-width: 100%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .teclado button {
+            height: 62px;
+            border-radius: 18px;
+            background: white;
+            color: #17699b;
+            font-size: 23px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,70,120,0.12);
+        }
+
+        .teclado .borrar {
+            color: #d45b72;
+        }
+
+        .teclado .entrar {
+            background: #238bd0;
+            color: white;
+        }
+
+        /* =========================
+           MENÚ
+        ========================== */
+
+        .menu-opciones {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .opcion-menu {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 18px;
+            background: white;
+            border-radius: 22px;
+            color: #17699b;
+            text-align: left;
+            box-shadow: 0 7px 20px rgba(0,70,120,0.10);
+            transition: 0.2s;
+        }
+
+        .opcion-menu:active {
+            transform: scale(0.98);
+        }
+
+        .icono-menu {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e3f4ff;
+            border-radius: 16px;
+            font-size: 27px;
+            flex-shrink: 0;
+        }
+
+        .contenido-opcion {
+            flex: 1;
+        }
+
+        .contenido-opcion strong {
+            display: block;
+            font-size: 19px;
+            margin-bottom: 5px;
+        }
+
+        .contenido-opcion span {
+            color: #718795;
+            font-size: 14px;
+        }
+
+        .flecha {
+            font-size: 25px;
+        }
+
+        .frase-menu {
+            margin-top: 30px;
+            color: #678092;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        /* =========================
+           CARTA
+        ========================== */
+
+        .sobre-decoracion,
+        .icono-grande {
+            font-size: 55px;
+        }
+
+        .carta {
+            background: #fff;
+            padding: 30px 25px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,70,120,0.13);
+            text-align: left;
+            margin-top: 25px;
+        }
+
+        .carta p {
+            color: #506b7b;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .carta strong {
+            color: #17699b;
+        }
+
+        .firma {
+            text-align: center;
+            color: #17699b !important;
+            font-weight: bold;
+        }
+
+        /* =========================
+           CANCIÓN
+        ========================== */
+
+        .cancion-tarjeta {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 28px;
+            box-shadow: 0 10px 30px rgba(0,70,120,0.13);
+            margin-top: 25px;
+        }
+
+        .disco {
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1769a2, #35a4e5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 45px;
+            box-shadow: 0 8px 20px rgba(0,90,150,0.25);
+        }
+
+        .youtube {
+            margin-top: 20px;
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 18px;
+        }
+
+        .youtube iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .mensaje-musica {
+            margin-top: 15px;
+            color: #718795;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .boton-youtube {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 20px;
+            border-radius: 25px;
+            background: #1769a2;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* =========================
+           SORPRESA
+        ========================== */
+
+        .sorpresa-tarjeta {
+            background: white;
+            padding: 20px;
+            border-radius: 28px;
+            box-shadow: 0 10px 30px rgba(0,70,120,0.13);
+            margin-top: 25px;
+        }
+
+        .imagen-sorpresa {
+            display: block;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            border-radius: 20px;
+            object-fit: contain;
+        }
+
+        /* =========================
+           CORAZONES
+        ========================== */
+
+        .corazon {
+            position: fixed;
+            z-index: 9999;
+            pointer-events: none;
+            animation: subir 2s ease-out forwards;
+            font-size: 24px;
+        }
+
+        @keyframes subir {
+
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-300px) scale(1.5);
+            }
+
+        }
+
+        /* =========================
+           CELULAR
+        ========================== */
+
+        @media (max-width: 600px) {
+
+            .pantalla {
+                padding: 25px 15px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            .logo-hotwheels {
+                font-size: 20px;
+            }
+
+            .subtitulo {
+                font-size: 17px;
+            }
+
+            .carta p {
+                font-size: 17px;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 <body>
 
-    <!-- ==============================
+
+    <!-- ==================================================
          INICIO
-    =============================== -->
+    =================================================== -->
 
     <section id="inicio" class="pantalla activa">
 
         <div class="contenido-inicio">
 
-            <div class="decoracion">
+            <div class="decoracion-superior">
                 ✨ 🏎️ ✨
             </div>
 
@@ -28,12 +503,18 @@
                 ───────── ♡ ─────────
             </div>
 
-            <h3 class="titulo-historia">
+            <div class="logo-hotwheels">
                 🏎️ UNA HISTORIA PARA TI 🏎️
-            </h3>
+            </div>
 
             <div class="foto-contenedor">
-                <img src="portada.jpg" alt="Nuestro recuerdo">
+
+                <img
+                    src="portada.jpg"
+                    alt="Nuestro recuerdo"
+                    class="foto-portada"
+                >
+
             </div>
 
             <div class="fecha">
@@ -45,13 +526,15 @@
             </h1>
 
             <p class="subtitulo">
-                Porque algunas historias están destinadas a encontrarse...
+                Porque algunas historias están
+                destinadas a encontrarse...
             </p>
 
             <button
                 type="button"
                 class="btn-principal"
-                onclick="mostrar('clave')">
+                id="btnComenzar"
+            >
                 Comenzar 💙
             </button>
 
@@ -59,7 +542,7 @@
                 ───────── ♡ ─────────
             </div>
 
-            <div class="decoracion">
+            <div class="decoracion-inferior">
                 ✨ 💙 ✨ 💙 ✨
             </div>
 
@@ -68,15 +551,15 @@
     </section>
 
 
-    <!-- ==============================
+    <!-- ==================================================
          CONTRASEÑA
-    =============================== -->
+    =================================================== -->
 
     <section id="clave" class="pantalla">
 
-        <div class="contenido-clave">
+        <div class="semaforo">
 
-            <div class="decoracion">
+            <div class="mini-decoracion">
                 💙 ✨ 💙
             </div>
 
@@ -98,33 +581,38 @@
 
             <div class="teclado">
 
-                <button type="button" onclick="numero('1')">1</button>
-                <button type="button" onclick="numero('2')">2</button>
-                <button type="button" onclick="numero('3')">3</button>
+                <button type="button" data-numero="1">1</button>
+                <button type="button" data-numero="2">2</button>
+                <button type="button" data-numero="3">3</button>
 
-                <button type="button" onclick="numero('4')">4</button>
-                <button type="button" onclick="numero('5')">5</button>
-                <button type="button" onclick="numero('6')">6</button>
+                <button type="button" data-numero="4">4</button>
+                <button type="button" data-numero="5">5</button>
+                <button type="button" data-numero="6">6</button>
 
-                <button type="button" onclick="numero('7')">7</button>
-                <button type="button" onclick="numero('8')">8</button>
-                <button type="button" onclick="numero('9')">9</button>
+                <button type="button" data-numero="7">7</button>
+                <button type="button" data-numero="8">8</button>
+                <button type="button" data-numero="9">9</button>
 
                 <button
                     type="button"
                     class="borrar"
-                    onclick="borrar()">
+                    id="btnBorrar"
+                >
                     ⌫
                 </button>
 
-                <button type="button" onclick="numero('0')">
+                <button
+                    type="button"
+                    data-numero="0"
+                >
                     0
                 </button>
 
                 <button
                     type="button"
                     class="entrar"
-                    onclick="entrar()">
+                    id="btnEntrar"
+                >
                     💙
                 </button>
 
@@ -133,7 +621,8 @@
             <button
                 type="button"
                 class="btn-volver"
-                onclick="mostrar('inicio')">
+                id="volverInicio"
+            >
                 ← Volver
             </button>
 
@@ -142,15 +631,15 @@
     </section>
 
 
-    <!-- ==============================
+    <!-- ==================================================
          MENÚ
-    =============================== -->
+    =================================================== -->
 
     <section id="menu" class="pantalla">
 
-        <div class="contenido-menu">
+        <div class="menu-contenido">
 
-            <div class="decoracion">
+            <div class="decoracion-titulo">
                 ✨ 💙 🏎️ 💙 ✨
             </div>
 
@@ -163,23 +652,36 @@
             </h2>
 
             <p class="texto-menu">
-                Cada pequeño detalle guarda una parte de nuestra historia.
+                Cada pequeño detalle guarda una parte
+                de nuestra historia.
             </p>
 
+
             <div class="menu-opciones">
+
+
+                <!-- CARTA -->
 
                 <button
                     type="button"
                     class="opcion-menu"
-                    onclick="mostrar('carta')">
+                    data-destino="carta"
+                >
 
                     <div class="icono-menu">
                         💌
                     </div>
 
                     <div class="contenido-opcion">
-                        <strong>Una carta</strong>
-                        <span>Algo que quiero decirte...</span>
+
+                        <strong>
+                            Una carta
+                        </strong>
+
+                        <span>
+                            Algo que quiero decirte...
+                        </span>
+
                     </div>
 
                     <div class="flecha">
@@ -189,18 +691,28 @@
                 </button>
 
 
+                <!-- CANCIÓN -->
+
                 <button
                     type="button"
                     class="opcion-menu"
-                    onclick="mostrar('cancion')">
+                    data-destino="cancion"
+                >
 
                     <div class="icono-menu">
                         🎵
                     </div>
 
                     <div class="contenido-opcion">
-                        <strong>Nuestra canción</strong>
-                        <span>Una canción para nosotros...</span>
+
+                        <strong>
+                            Nuestra canción
+                        </strong>
+
+                        <span>
+                            Una canción para nosotros...
+                        </span>
+
                     </div>
 
                     <div class="flecha">
@@ -210,18 +722,28 @@
                 </button>
 
 
+                <!-- SORPRESA -->
+
                 <button
                     type="button"
                     class="opcion-menu"
-                    onclick="mostrar('sorpresa')">
+                    data-destino="sorpresa"
+                >
 
                     <div class="icono-menu">
                         🏆
                     </div>
 
                     <div class="contenido-opcion">
-                        <strong>Una sorpresa</strong>
-                        <span>Para terminar este recorrido...</span>
+
+                        <strong>
+                            Una sorpresa
+                        </strong>
+
+                        <span>
+                            Para terminar este recorrido...
+                        </span>
+
                     </div>
 
                     <div class="flecha">
@@ -232,20 +754,26 @@
 
             </div>
 
+
+            <div class="frase-menu">
+                ✨ Porque algunas historias están
+                destinadas a encontrarse... ✨
+            </div>
+
         </div>
 
     </section>
 
 
-    <!-- ==============================
+    <!-- ==================================================
          CARTA
-    =============================== -->
+    =================================================== -->
 
     <section id="carta" class="pantalla">
 
-        <div class="contenido-carta">
+        <div class="carta-contenido">
 
-            <div class="icono-grande">
+            <div class="sobre-decoracion">
                 💌
             </div>
 
@@ -285,8 +813,8 @@
 
             <button
                 type="button"
-                class="btn-volver"
-                onclick="mostrar('menu')">
+                class="btn-volver volver-menu"
+            >
                 ← Volver al menú
             </button>
 
@@ -295,13 +823,13 @@
     </section>
 
 
-    <!-- ==============================
-         CANCIÓN DE YOUTUBE
-    =============================== -->
+    <!-- ==================================================
+         CANCIÓN
+    =================================================== -->
 
     <section id="cancion" class="pantalla">
 
-        <div class="contenido-cancion">
+        <div class="cancion-contenido">
 
             <div class="icono-grande">
                 🎵
@@ -315,7 +843,7 @@
                 Nuestra canción 💙
             </h2>
 
-            <p class="texto-cancion">
+            <p class="texto-cancion-intro">
                 Hay canciones que simplemente
                 nos hacen recordar a alguien especial.
             </p>
@@ -331,8 +859,12 @@
                 </h3>
 
                 <p>
-                    Porque algunas melodías también cuentan historias.
+                    Porque algunas melodías
+                    también cuentan historias.
                 </p>
+
+
+                <!-- YOUTUBE -->
 
                 <div class="youtube">
 
@@ -345,16 +877,29 @@
 
                 </div>
 
+
                 <p class="mensaje-musica">
-                    🎧 Presiona ▶️ para comenzar a escuchar. 💙
+                    🎧 Presiona ▶️ para comenzar a escuchar
+                    nuestra canción. 💙
                 </p>
+
+
+                <a
+                    class="boton-youtube"
+                    href="https://youtu.be/8qPG-f8ECNM?si=jAfSl0oUjSk2yMG0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    🎵 Abrir canción en YouTube
+                </a>
 
             </div>
 
+
             <button
                 type="button"
-                class="btn-volver"
-                onclick="mostrar('menu')">
+                class="btn-volver volver-menu"
+            >
                 ← Volver al menú
             </button>
 
@@ -363,13 +908,13 @@
     </section>
 
 
-    <!-- ==============================
+    <!-- ==================================================
          SORPRESA
-    =============================== -->
+    =================================================== -->
 
     <section id="sorpresa" class="pantalla">
 
-        <div class="contenido-sorpresa">
+        <div class="sorpresa-contenido">
 
             <div class="icono-grande">
                 🏆
@@ -383,18 +928,22 @@
                 Y esta es la sorpresa... 💙
             </h2>
 
-            <div class="sorpresa-imagen">
+
+            <div class="sorpresa-tarjeta">
 
                 <img
                     src="sorpresa.jpg"
-                    alt="El hilo rojo del destino">
+                    alt="Una sorpresa para ti"
+                    class="imagen-sorpresa"
+                >
 
             </div>
 
+
             <button
                 type="button"
-                class="btn-volver"
-                onclick="mostrar('menu')">
+                class="btn-volver volver-menu"
+            >
                 ← Volver al menú
             </button>
 
@@ -403,109 +952,372 @@
     </section>
 
 
-    <!-- ==============================
+    <!-- ==================================================
          JAVASCRIPT
-    =============================== -->
+         TODO ESTÁ AQUÍ PARA EVITAR CONFLICTOS
+    =================================================== -->
 
     <script>
 
-        let claveIngresada = "";
+        document.addEventListener("DOMContentLoaded", function () {
 
-        const claveCorrecta = "1007";
+            let claveIngresada = "";
+
+            const claveCorrecta = "1007";
 
 
-        function mostrar(id) {
+            /* =========================
+               CAMBIAR DE PANTALLA
+            ========================== */
 
-            const pantallas =
-                document.querySelectorAll(".pantalla");
+            function mostrar(id) {
 
-            pantallas.forEach(function(pantalla) {
-                pantalla.classList.remove("activa");
-            });
+                const pantallas =
+                    document.querySelectorAll(".pantalla");
 
-            const destino =
-                document.getElementById(id);
+                pantallas.forEach(function (pantalla) {
 
-            if (destino) {
-                destino.classList.add("activa");
+                    pantalla.classList.remove("activa");
 
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
                 });
-            }
-        }
 
 
-        function numero(num) {
-
-            if (claveIngresada.length < 4) {
-
-                claveIngresada += num;
-
-                actualizarDisplay();
-            }
-        }
+                const destino =
+                    document.getElementById(id);
 
 
-        function borrar() {
+                if (destino) {
 
-            claveIngresada =
-                claveIngresada.slice(0, -1);
+                    destino.classList.add("activa");
 
-            actualizarDisplay();
-        }
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
 
-
-        function actualizarDisplay() {
-
-            let texto = "";
-
-            for (let i = 0; i < 4; i++) {
-
-                if (i < claveIngresada.length) {
-                    texto += "●";
-                } else {
-                    texto += "_";
                 }
 
             }
 
-            document.getElementById("display").textContent = texto;
-        }
+
+            /* =========================
+               BOTÓN COMENZAR
+            ========================== */
+
+            const btnComenzar =
+                document.getElementById("btnComenzar");
 
 
-        function entrar() {
+            btnComenzar.addEventListener(
+                "click",
+                function () {
 
-            if (claveIngresada === claveCorrecta) {
+                    mostrar("clave");
 
-                claveIngresada = "";
+                }
+            );
 
-                actualizarDisplay();
 
-                mostrar("menu");
+            /* =========================
+               NÚMEROS
+            ========================== */
 
-            } else {
+            const botonesNumero =
+                document.querySelectorAll(
+                    "[data-numero]"
+                );
 
-                document.getElementById("display").textContent = "💔";
 
-                setTimeout(function() {
+            botonesNumero.forEach(
+                function (boton) {
+
+                    boton.addEventListener(
+                        "click",
+                        function () {
+
+                            if (
+                                claveIngresada.length < 4
+                            ) {
+
+                                claveIngresada +=
+                                    boton.dataset.numero;
+
+                                actualizarDisplay();
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
+
+
+            /* =========================
+               DISPLAY
+            ========================== */
+
+            function actualizarDisplay() {
+
+                let texto = "";
+
+                for (
+                    let i = 0;
+                    i < 4;
+                    i++
+                ) {
+
+                    if (
+                        i < claveIngresada.length
+                    ) {
+
+                        texto += "●";
+
+                    } else {
+
+                        texto += "_";
+
+                    }
+
+                }
+
+
+                document.getElementById(
+                    "display"
+                ).textContent = texto;
+
+            }
+
+
+            /* =========================
+               BORRAR
+            ========================== */
+
+            document.getElementById(
+                "btnBorrar"
+            ).addEventListener(
+                "click",
+                function () {
+
+                    claveIngresada =
+                        claveIngresada.slice(0, -1);
+
+                    actualizarDisplay();
+
+                }
+            );
+
+
+            /* =========================
+               ENTRAR
+            ========================== */
+
+            document.getElementById(
+                "btnEntrar"
+            ).addEventListener(
+                "click",
+                function () {
+
+                    if (
+                        claveIngresada ===
+                        claveCorrecta
+                    ) {
+
+                        claveIngresada = "";
+
+                        actualizarDisplay();
+
+                        mostrar("menu");
+
+                        lanzarCorazones();
+
+                    } else {
+
+                        document.getElementById(
+                            "display"
+                        ).textContent = "💔";
+
+
+                        setTimeout(
+                            function () {
+
+                                claveIngresada = "";
+
+                                actualizarDisplay();
+
+                            },
+                            900
+                        );
+
+                    }
+
+                }
+            );
+
+
+            /* =========================
+               BOTÓN VOLVER INICIO
+            ========================== */
+
+            document.getElementById(
+                "volverInicio"
+            ).addEventListener(
+                "click",
+                function () {
 
                     claveIngresada = "";
 
                     actualizarDisplay();
 
-                }, 1000);
-            }
-        }
+                    mostrar("inicio");
+
+                }
+            );
 
 
-        document.addEventListener(
-            "DOMContentLoaded",
-            function() {
-                actualizarDisplay();
+            /* =========================
+               OPCIONES DEL MENÚ
+            ========================== */
+
+            const opciones =
+                document.querySelectorAll(
+                    ".opcion-menu"
+                );
+
+
+            opciones.forEach(
+                function (opcion) {
+
+                    opcion.addEventListener(
+                        "click",
+                        function () {
+
+                            const destino =
+                                opcion.dataset.destino;
+
+                            mostrar(destino);
+
+                        }
+                    );
+
+                }
+            );
+
+
+            /* =========================
+               VOLVER AL MENÚ
+            ========================== */
+
+            const botonesVolver =
+                document.querySelectorAll(
+                    ".volver-menu"
+                );
+
+
+            botonesVolver.forEach(
+                function (boton) {
+
+                    boton.addEventListener(
+                        "click",
+                        function () {
+
+                            mostrar("menu");
+
+                        }
+                    );
+
+                }
+            );
+
+
+            /* =========================
+               CORAZONES
+            ========================== */
+
+            function lanzarCorazones() {
+
+                const elementos = [
+                    "💙",
+                    "💙",
+                    "✨",
+                    "💕",
+                    "💙"
+                ];
+
+
+                for (
+                    let i = 0;
+                    i < 15;
+                    i++
+                ) {
+
+                    setTimeout(
+                        function () {
+
+                            const corazon =
+                                document.createElement(
+                                    "div"
+                                );
+
+
+                            corazon.className =
+                                "corazon";
+
+
+                            corazon.textContent =
+                                elementos[
+                                    Math.floor(
+                                        Math.random() *
+                                        elementos.length
+                                    )
+                                ];
+
+
+                            corazon.style.left =
+                                (
+                                    5 +
+                                    Math.random() * 90
+                                ) + "vw";
+
+
+                            corazon.style.top =
+                                (
+                                    70 +
+                                    Math.random() * 20
+                                ) + "vh";
+
+
+                            document.body.appendChild(
+                                corazon
+                            );
+
+
+                            setTimeout(
+                                function () {
+
+                                    corazon.remove();
+
+                                },
+                                2000
+                            );
+
+
+                        },
+                        i * 100
+                    );
+
+                }
+
             }
-        );
+
+
+            /* =========================
+               INICIO
+            ========================== */
+
+            actualizarDisplay();
+
+        });
 
     </script>
 
